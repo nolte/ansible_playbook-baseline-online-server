@@ -1,0 +1,3 @@
+---
+system_supporters:
+  - "{{ ansible_user }}"

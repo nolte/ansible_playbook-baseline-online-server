@@ -1,0 +1,9 @@
+---
+
+- name: install firewalld
+  package:
+    name: firewalld
+    state: present
+
+- include_role:
+    name: robertdebock.fail2ban

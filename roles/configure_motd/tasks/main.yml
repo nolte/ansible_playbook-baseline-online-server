@@ -1,0 +1,9 @@
+---
+
+- name: Template a file to /etc/files.conf
+  template:
+    src: mot.sh.j2
+    dest: /etc/profile.d/mot.sh
+    owner: root
+    group: root
+    mode: 'a+x'

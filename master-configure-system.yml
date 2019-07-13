@@ -1,0 +1,3 @@
+---
+- import_playbook: playbook-base-configureation.yml
+- import_playbook: playbook-docker-configureation.yml

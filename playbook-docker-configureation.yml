@@ -1,0 +1,21 @@
+---
+- hosts: dockerbased
+  become: true
+  vars:
+    docker_compose_version: "1.24.1"
+  tasks:
+
+    - include_role:
+        name: python3
+
+    - include_role:
+        name: geerlingguy.pip
+
+    - include_role:
+        name: geerlingguy.docker
+      vars:
+        docker_install_compose: true
+        docker_users: "{{ system_supporters }}"
+    - pip:
+        name:
+          - docker-py

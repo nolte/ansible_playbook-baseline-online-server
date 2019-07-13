@@ -1,0 +1,26 @@
+{
+    "variables": {},
+    "provisioners": [
+        {
+            "type": "ansible",
+            "playbook_file": "../master-configure-system.yml",
+            "user": "vagrant",
+            "groups": [
+                "dockerbased"
+            ],
+            "inventory_directory": "../molecule/inventory"
+        }
+    ],
+    "builders": [
+        {
+            "communicator": "ssh",
+            "source_path": "centos/7",
+            "provider": "virtualbox",
+            "box_name": "base-dockerbox",
+            "box_version": "1905.1",
+            "add_force": true,
+            "type": "vagrant"
+        }
+    ],
+    "post-processors": []
+}

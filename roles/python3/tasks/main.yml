@@ -1,0 +1,38 @@
+---
+
+
+- name: install the nginx rpm from a remote repo
+  yum:
+    name: yum-utils
+    state: present
+
+- name: install the nginx rpm from a remote repo
+  yum:
+    name: https://centos7.iuscommunity.org/ius-release.rpm
+    state: present
+
+- package:
+    name: "{{ item }}"
+  with_items:
+    - python36u
+    - python36u-libs
+    - python36u-devel
+    - python36u-pip
+    - python-pip
+
+- pip:
+    name:
+      - "virtualenv"
+
+
+#- name: Correct python3 version selected
+#  alternatives:
+#    name: python
+#    path: /usr/bin/python3.6
+#    link: /usr/bin/python
+#
+#- name: Correct python3 version selected
+#  alternatives:
+#    name: pip
+#    path: /usr/bin/pip3.6
+#    link: /usr/bin/pip

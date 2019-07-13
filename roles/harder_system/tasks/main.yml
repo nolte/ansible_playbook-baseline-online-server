@@ -1,0 +1,26 @@
+---
+
+- include: harder_sshd.yml
+
+- include: configure_firewall.yml
+
+- template:
+    src: audit.rules.j2
+    dest: /etc/audit/rules.d/audit.rules
+    owner: root
+    group: root
+  notify:
+    - "started auditd"
+
+- template:
+    src: system-auth.j2
+    dest: /etc/pam.d/system-auth
+    owner: root
+    group: root
+
+- template:
+    src: fail2ban_jail.local.j2
+    dest: /etc/fail2ban/jail.local
+    owner: root
+    group: root
+  notify: restart fail2ban

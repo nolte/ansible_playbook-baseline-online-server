@@ -1,0 +1,61 @@
+---
+- hosts: all
+  become: true
+  vars:
+    restic_version: 0.9.5
+    sshd_AllowUsers: "{{ system_supporters }}"
+  tasks:
+
+    - include_role:
+        name: configure_motd
+
+    - include_role:
+        name: robertdebock.bootstrap
+
+    - include_role:
+        name: robertdebock.epel
+
+    - include_role:
+        name: harder_system
+
+    - include_role:
+        name: arillso.logrotate
+      vars:
+        logrotate_applications:
+          - name: fail2ban
+            definitions:
+              - logs:
+                  - '/var/log/fail2ban.log'
+                postrotate:
+                  - /usr/bin/fail2ban-client flushlogs >/dev/null || true
+                options:
+                  - compress
+                  - missingok
+                  - daily
+                  - rotate 7
+                  - maxage 7
+                  - maxsize 10M
+                  - notifempty
+                  - create
+          - name: syslog
+            definitions:
+              - logs:
+                  - '/var/log/cron'
+                  - '/var/log/maillog'
+                  - '/var/log/messages'
+                  - '/var/log/secure'
+                  - '/var/log/spooler'
+                postrotate:
+                  - /bin/kill -HUP `cat /var/run/syslogd.pid 2> /dev/null` 2> /dev/null || true
+                options:
+                  - compress
+                  - missingok
+                  - sharedscripts
+                  - daily
+                  - rotate 7
+                  - maxage 7
+                  - maxsize 10M
+                  - notifempty
+                  - create
+
+  handlers: []
