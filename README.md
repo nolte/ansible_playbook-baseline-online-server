@@ -13,3 +13,21 @@ source ~/venvs/develop-ansible_role-vagrant/bin/activate
 pip install -r requirements.txt
 pre-commit install
 ```
+
+running the tests:
+
+```bash
+molecule test
+```
+
+## Reusing and Sharing
+
+For reusing and sharing you can create own vagrant box with the Packer File under ``/build``.
+
+```bash
+source ~/venvs/develop-ansible_role-vagrant/bin/activate
+ansible-galaxy install -r requirements.yml
+cd build
+packer build base_docker_box.json
+vagrant box add base-dockerbox file:///$(pwd)/output-vagrant/package.box --force
+```

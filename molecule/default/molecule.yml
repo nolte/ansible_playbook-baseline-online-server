@@ -9,7 +9,7 @@ driver:
     name: parallels
 lint:
   name: yamllint
-  enabled: false
+  enabled: true
 platforms:
   - name: instance-1
     box: centos/7
@@ -43,7 +43,7 @@ scenario:
     - create
     - prepare
     - converge
-#    - idempotence
+    - idempotence
     - side_effect
     - verify
     - cleanup
