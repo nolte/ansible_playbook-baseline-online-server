@@ -14,6 +14,12 @@ pip install -r requirements.txt
 pre-commit install
 ```
 
+```bash
+pass private/keyfiles/ssh/ansible_rollout/passphrase -c
+eval "$(ssh-agent -s)"
+ssh-add -p ~/.ssh/ansible_id_ed25519
+```
+
 running the tests:
 
 ```bash

@@ -19,6 +19,21 @@
         name: harder_system
 
     - include_role:
+        name: python3
+
+    - include_role:
+        name: geerlingguy.pip
+
+    - name: Ensure botocore and boto3 modules are installed
+      pip:
+        name:
+          - "boto3"
+          - "botocore"
+
+    - include_role:
+        name: paulfantom.restic
+
+    - include_role:
         name: arillso.logrotate
       vars:
         logrotate_applications:

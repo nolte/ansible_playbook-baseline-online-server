@@ -1,10 +1,10 @@
 ---
-- name: install the nginx rpm from a remote repo
+- name: install the yum-utils rpm from a remote repo
   yum:
     name: yum-utils
     state: present
 
-- name: install the nginx rpm from a remote repo
+- name: install the python rpm from a remote repo
   yum:
     name: https://centos7.iuscommunity.org/ius-release.rpm
     state: present

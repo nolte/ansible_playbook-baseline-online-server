@@ -6,3 +6,5 @@
 - name: arillso.logrotate
 - name: geerlingguy.pip
 - name: geerlingguy.docker
+- name: linuxhq.elrepo
+- name: paulfantom.restic

@@ -18,4 +18,4 @@
         docker_users: "{{ system_supporters }}"
     - pip:
         name:
-          - docker-py
+          - docker
