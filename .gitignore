@@ -1,3 +1,4 @@
+*.output-vagrant-*
 output-vagrant
 .tox
 *.retry

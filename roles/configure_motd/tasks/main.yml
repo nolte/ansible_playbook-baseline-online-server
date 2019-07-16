@@ -1,6 +1,6 @@
 ---
 
-- name: Template a file to /etc/files.conf
+- name: Template to /etc/profile.d/mot.sh for motd
   template:
     src: mot.sh.j2
     dest: /etc/profile.d/mot.sh

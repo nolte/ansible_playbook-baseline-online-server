@@ -2,9 +2,11 @@
 - hosts: all
   become: true
   vars:
-    restic_version: 0.9.5
     sshd_AllowUsers: "{{ system_supporters }}"
   tasks:
+
+    - include_role:
+        name: manala.timezone
 
     - include_role:
         name: configure_motd
@@ -19,19 +21,16 @@
         name: harder_system
 
     - include_role:
+        name: configure_fail2ban
+
+    - include_role:
         name: python3
 
     - include_role:
         name: geerlingguy.pip
 
-    - name: Ensure botocore and boto3 modules are installed
-      pip:
-        name:
-          - "boto3"
-          - "botocore"
-
     - include_role:
-        name: paulfantom.restic
+        name: preparation_backup
 
     - include_role:
         name: arillso.logrotate
