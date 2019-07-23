@@ -11,6 +11,7 @@
         docker_install_compose: true
         docker_users: "{{ system_supporters }}"
 
-    - pip:
+    - name: install ansible required docker python package
+      pip:
         name:
           - docker

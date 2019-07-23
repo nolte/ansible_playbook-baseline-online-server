@@ -12,8 +12,8 @@
 - name: "set addition sshd config attributes"
   lineinfile:
     path: /etc/ssh/sshd_config
-    regexp: "{{item.regexp}}"
-    line: "{{item.line}}"
+    regexp: "{{ item.regexp }}"
+    line: "{{ item.line }}"
     validate: 'sshd -t -f %s'
   with_items:
     - {regexp: "^Protocol", line: "Protocol 2"}

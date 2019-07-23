@@ -2,7 +2,8 @@
 
 - include: harder_sshd.yml
 
-- template:
+- name: configure audit.rules
+  template:
     src: audit.rules.j2
     dest: /etc/audit/rules.d/audit.rules
     owner: root
@@ -10,7 +11,8 @@
   notify:
     - "started auditd"
 
-- template:
+- name: configure system-auth
+  template:
     src: system-auth.j2
     dest: /etc/pam.d/system-auth
     owner: root

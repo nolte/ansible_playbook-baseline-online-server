@@ -9,7 +9,8 @@
     name: https://centos7.iuscommunity.org/ius-release.rpm
     state: present
 
-- package:
+- name: install python3 required packages
+  package:
     name: "{{ item }}"
   with_items:
     - python36u

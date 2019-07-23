@@ -11,7 +11,7 @@ lint:
   name: yamllint
   enabled: true
 platforms:
-  - name: instance-1
+  - name: molecule-instance-1
     box: centos/7
     memory: 4096
     cpus: 2
@@ -26,13 +26,13 @@ provisioner:
     converge: ../../master-configure-system.yml
   lint:
     name: ansible-lint
-    enabled: false
-    options:
-      x:
-        - ANSIBLE0006
-        - ANSIBLE0010
-        - ANSIBLE0011
-        - ANSIBLE0016
+    # enabled: false
+    # options:
+    #   x:
+    #     - ANSIBLE0006
+    #     - ANSIBLE0010
+    #     - ANSIBLE0011
+    #     - ANSIBLE0016
 scenario:
   name: default
   test_sequence:
@@ -53,4 +53,3 @@ verifier:
   directory: ../../test
   lint:
     name: flake8
-    enabled: false
