@@ -1,8 +1,10 @@
 ---
 language: python
+env:
+  matrix:
+    - SCENARIO_NAME=static_tests
+    - SCENARIO_NAME=docs
 install:
-  - pip install -r requirements.txt
+  - pip install tox-travis
 script:
-  - molecule lint
-  - molecule dependency
-  - molecule syntax
+  - tox -e ${SCENARIO_NAME}
