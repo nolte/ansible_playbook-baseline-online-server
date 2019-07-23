@@ -2,6 +2,7 @@
 language: python
 env:
   matrix:
+    - SCENARIO_NAME=fix_lint
     - SCENARIO_NAME=static_tests
     - SCENARIO_NAME=docs
 install:
