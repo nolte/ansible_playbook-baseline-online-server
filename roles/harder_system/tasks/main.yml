@@ -15,3 +15,36 @@
     dest: /etc/pam.d/system-auth
     owner: root
     group: root
+
+
+- name: disable audit log logrotate
+  lineinfile:
+    path: /etc/audit/auditd.conf
+    regexp: '^max_log_file_action = '
+    line: max_log_file_action = IGNORE
+
+- name: disable audit log max log files
+  lineinfile:
+    path: /etc/audit/auditd.conf
+    regexp: '^max_log_file = '
+    line: max_log_file = 0
+
+- include_role:
+    name: arillso.logrotate
+  vars:
+    logrotate_applications:
+      - name: auditlog
+        definitions:
+          - logs:
+              - '/var/log/audit/audit.log'
+            postrotate:
+              - "touch /var/log/audit/audit.log ||:"
+              - "chmod 0600 /var/log/audit/audit.log ||:"
+              - "service auditd restart"
+            options:
+              - weekly
+              - missingok
+              - compress
+              - rotate 30
+              - minsize 100k
+              - maxsize 200M
