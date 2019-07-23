@@ -1,6 +1,7 @@
 *.output-vagrant-*
 output-vagrant
 .tox
+.pytest_cache
 *.retry
 *.vagrant
 *.terraform
