@@ -106,9 +106,9 @@ Must be executed from the ``develop`` branch.
 
 ```bash
 pre-commit uninstall \
-    && bumpversion --tag release --commit \
+    && bump2version --tag release --commit \
     && git checkout master && git merge develop && git checkout develop \
-    && bumpversion --no-tag patch --commit \
+    && bump2version --no-tag patch --commit \
     && git push origin master --tags \
     && git push origin develop \
     && pre-commit install
