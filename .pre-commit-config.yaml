@@ -4,8 +4,13 @@ repos:
     rev: v2.0.0
     hooks:
       - id: trailing-whitespace
-        exclude: ".md"
+        exclude: |
+            (?x)(
+                .md|
+                .bumpversion.cfg
+            )
       - id: end-of-file-fixer
+        exclude: ".bumpversion.cfg"
       - id: check-yaml
       - id: flake8
   - repo: 'https://github.com/adrienverge/yamllint'
