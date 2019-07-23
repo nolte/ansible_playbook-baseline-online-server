@@ -36,4 +36,4 @@ repos:
     rev: v4.1.0
     hooks:
       - id: ansible-lint
-        args: [-x, "306"] # faild for geerlingguy.docker (Shells that use pipes should set the pipefail option)
+        args: [-x, "306"]  # faild for geerlingguy.docker (Shells that use pipes should set the pipefail option)
