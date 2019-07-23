@@ -32,3 +32,8 @@ repos:
       - id: black
         args: [--safe]
         language_version: python3.6
+  - repo: https://github.com/ansible/ansible-lint
+    rev: v4.1.0
+    hooks:
+      - id: ansible-lint
+        args: [-x, "306"] # faild for geerlingguy.docker (Shells that use pipes should set the pipefail option)
