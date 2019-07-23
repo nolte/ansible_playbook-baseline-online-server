@@ -1,5 +1,7 @@
 # Base Service Configuration
 
+[![Github Project Stars](https://img.shields.io/github/stars/nolte/ansible_playbook-baseline-online-server.svg?label=Stars&style=social)](https://github.com/nolte/ansible_playbook-baseline-online-server) [![Travis CI build status](https://travis-ci.org/nolte/ansible_playbook-baseline-online-server.svg?branch=master)](https://travis-ci.org/nolte/ansible_playbook-baseline-online-server) [![Documentation Status](https://readthedocs.org/projects/ansible_playbook-baseline-online-server/badge/?version=latest)](https://ansible_playbook-baseline-online-server.readthedocs.io/en/stable/?badge=stable) [![Github Issue Tracking](https://img.shields.io/github/issues-raw/nolte/ansible_playbook-baseline-online-server.svg)](https://github.com/nolte/ansible_playbook-baseline-online-server) [![Github LatestRelease](https://img.shields.io/github/release/nolte/ansible_playbook-baseline-online-server.svg)](https://github.com/nolte/ansible_playbook-baseline-online-server)
+
 This Repository will be handle the base configuration of Public Services, like Minecraft Server or Personal S3 Storage, a try dont get any [Snowflake Server](https://martinfowler.com/bliki/SnowflakeServer.html).  
 Mostly hosted at [hetzner.cloud](https://docs.hetzner.cloud), and created with [Terraform](https://www.terraform.io/docs/providers/hcloud/index.html).
 
@@ -61,8 +63,8 @@ ansible-playbook master-configure-system.yml
 For Locally automatical testing we use a Combination of Molecule and Vagrant
 
 ```bash
-virtualenv -p python3 ~/venvs/develop-ansible_role-vagrant/
-source ~/venvs/develop-ansible_role-vagrant/bin/activate
+virtualenv -p python3 ~/venvs/ansible-vagrant/
+source ~/venvs/ansible-vagrant/bin/activate
 pip install -r requirements.txt
 pre-commit install
 ```
