@@ -9,8 +9,15 @@
     name: robertdebock.fail2ban
 
 - template:
-    src: fail2ban_jail.local.j2
+    src: jail.local.j2
     dest: /etc/fail2ban/jail.local
+    owner: root
+    group: root
+  notify: restart fail2ban
+
+- template:
+    src: jail_sshd.conf.j2
+    dest: /etc/fail2ban/jail.d/sshd.conf
     owner: root
     group: root
   notify: restart fail2ban

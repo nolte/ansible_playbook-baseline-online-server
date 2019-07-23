@@ -15,26 +15,11 @@
             "communicator": "ssh",
             "source_path": "centos/7",
             "provider": "virtualbox",
-            "box_name": "base-basebox",
             "box_version": "1905.1",
             "add_force": true,
             "type": "vagrant",
             "output_dir": "{{user `output_path`}}/vagrant"
         }
     ],
-    "post-processors": [
-        {
-            "type": "artifice",
-            "files": [
-                "{{user `output_path`}}/package.box"
-            ]
-        },
-        {
-            "type": "vagrant"
-        },
-        {
-            "type": "compress",
-            "output": "{{user `output_path`}}/archive.tar.gz"
-        }
-    ]
+    "post-processors": []
 }

@@ -1,9 +1,13 @@
 {% extends "!layout.html" %}
 {% set sticky_navigation = True %}
-{% set extra_css_files = ['_static/overrides.css'] %}
 {% block extrahead %}
 {{ super() }}
 {% endblock %}
 {% block footer %}
+<div class="github-fork-ribbon-wrapper right">
+    <div class="github-fork-ribbon">
+        <a href="https://github.com/nolte/ansible_playbook-baseline-online-server">Fork me at GitHub</a>
+    </div>
+</div>
 {{ super() }}
 {% endblock %}
