@@ -9,3 +9,9 @@ install:
   - pip install tox-travis
 script:
   - tox -e ${SCENARIO_NAME}
+
+branches:
+  only:
+    - master
+    - develop
+    - feature/*
