@@ -1,0 +1,263 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Fail2Ban &mdash; Base Service Configuration  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custome.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Harder SSHd" href="harder_sshd.html" />
+    <link rel="prev" title="Feature Details" href="index.html" />
+ 
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Base Service Configuration
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                v0.0.7
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../readme.html">Base Service Configuration</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Feature Details</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Fail2Ban</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#usefull-commands">Usefull Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="harder_sshd.html">Harder SSHd</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Base Service Configuration</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Feature Details</a> &raquo;</li>
+        
+      <li>Fail2Ban</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/features/fail2ban.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="fail2ban">
+<span id="feature-fail2ban"></span><h1>Fail2Ban<a class="headerlink" href="#fail2ban" title="Permalink to this headline">¶</a></h1>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="../glossary.html#term-fail2ban"><span class="xref std std-term">fail2ban</span></a> is a good way to keep <a class="reference external" href="https://en.wikipedia.org/wiki/Brute-force_attack">Brute force attack</a>’s  away from our System.</div>
+<div class="line">The Base configuration will be done from the <a class="reference external" href="https://github.com/robertdebock/ansible-role-fail2ban">robertdebock.fail2ban</a> Ansible Role. For Client required configuration take a look at <a class="reference internal" href="harder_sshd.html#feature-harderssd-client-config"><span class="std std-ref">Client Side SSH Configration</span></a>.</div>
+</div>
+<div class="section" id="usefull-commands">
+<h2>Usefull Commands<a class="headerlink" href="#usefull-commands" title="Permalink to this headline">¶</a></h2>
+<p>Show Current Jails</p>
+<div class="literal-block-wrapper docutils container" id="example-fail2ban-list-jails">
+<div class="code-block-caption"><span class="caption-text">list all jails</span><a class="headerlink" href="#example-fail2ban-list-jails" title="Permalink to this code">¶</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo su
+fail2ban-client status <span class="p">|</span> sed -n <span class="s1">&#39;s/,//g;s/.*Jail list://p&#39;</span> <span class="p">|</span> xargs -n1 fail2ban-client status
+</pre></div>
+</div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Status <span class="k">for</span> the jail: nginx-req-limit
+<span class="p">|</span>- Filter
+<span class="p">|</span>  <span class="p">|</span>- Currently failed:     <span class="m">0</span>
+<span class="p">|</span>  <span class="p">|</span>- Total failed: <span class="m">0</span>
+<span class="p">|</span>  <span class="sb">`</span>- File list:    /var/log/nginx/error.log
+<span class="sb">`</span>- Actions
+   <span class="p">|</span>- Currently banned:     <span class="m">0</span>
+   <span class="p">|</span>- Total banned: <span class="m">0</span>
+   <span class="sb">`</span>- Banned IP list:
+Status <span class="k">for</span> the jail: sshd
+<span class="p">|</span>- Filter
+<span class="p">|</span>  <span class="p">|</span>- Currently failed:     <span class="m">16</span>
+<span class="p">|</span>  <span class="p">|</span>- Total failed: <span class="m">108</span>
+<span class="p">|</span>  <span class="sb">`</span>- Journal matches:      <span class="nv">_SYSTEMD_UNIT</span><span class="o">=</span>sshd.service + <span class="nv">_COMM</span><span class="o">=</span>sshd
+<span class="sb">`</span>- Actions
+   <span class="p">|</span>- Currently banned:     <span class="m">0</span>
+   <span class="p">|</span>- Total banned: <span class="m">3</span>
+   <span class="sb">`</span>- Banned IP list:
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="harder_sshd.html" class="btn btn-neutral float-right" title="Harder SSHd" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Feature Details" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+<div class="github-fork-ribbon-wrapper right">
+    <div class="github-fork-ribbon">
+        <a href="https://github.com/nolte/ansible_playbook-baseline-online-server">Fork me at GitHub</a>
+    </div>
+</div>
+ 
+
+
+</body>
+</html>

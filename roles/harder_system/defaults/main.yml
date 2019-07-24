@@ -1,3 +1,0 @@
----
-sshd_AllowUsers:
-  - "{{ ansible_user }}"
