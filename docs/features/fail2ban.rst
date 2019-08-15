@@ -41,3 +41,12 @@ Show Current Jails
        |- Currently banned:	0
        |- Total banned:	3
        `- Banned IP list:
+
+
+Additional Links
+==================
+
+some untested Prometheus Exporters
+
+* `jangrewe/prometheus-fail2ban-exporter <https://github.com/jangrewe/prometheus-fail2ban-exporter>`_
+* `Kylapaallikko/fail2ban_exporter <https://github.com/Kylapaallikko/fail2ban_exporter>`_
