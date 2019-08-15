@@ -2,7 +2,7 @@
 
 [![Github Project Stars](https://img.shields.io/github/stars/nolte/ansible_playbook-baseline-online-server.svg?label=Stars&style=social)](https://github.com/nolte/ansible_playbook-baseline-online-server) [![Travis CI build status](https://travis-ci.org/nolte/ansible_playbook-baseline-online-server.svg?branch=master)](https://travis-ci.org/nolte/ansible_playbook-baseline-online-server) [![Documentation Status](https://readthedocs.org/projects/ansible_playbook-baseline-online-server/badge/?version=latest)](https://ansible_playbook-baseline-online-server.readthedocs.io/en/stable/?badge=stable) [![Github Issue Tracking](https://img.shields.io/github/issues-raw/nolte/ansible_playbook-baseline-online-server.svg)](https://github.com/nolte/ansible_playbook-baseline-online-server) [![Github LatestRelease](https://img.shields.io/github/release/nolte/ansible_playbook-baseline-online-server.svg)](https://github.com/nolte/ansible_playbook-baseline-online-server)
 
-This Repository will be handle the base configuration of Public Services, like Minecraft Server or Personal S3 Storage, a try dont get any [Snowflake Server](https://martinfowler.com/bliki/SnowflakeServer.html).  
+This Repository will be handle the base configuration of Public Services, like [Minecraft Server](https://github.com/nolte/minecraft-infrastructure) or [Personal S3 Storage](https://github.com/nolte/personal-storage-infrastructure), a try dont get any [Snowflake Server](https://martinfowler.com/bliki/SnowflakeServer.html).  
 Mostly hosted at [hetzner.cloud](https://docs.hetzner.cloud), and created with [Terraform](https://www.terraform.io/docs/providers/hcloud/index.html).
 
 ## Features
@@ -15,8 +15,10 @@ Mostly hosted at [hetzner.cloud](https://docs.hetzner.cloud), and created with [
 * install ``python3``
 * configure system ``timezone``
 * configure ``docker`` (optional)
-* execute ``open-scap-scan`` (planed)
-* configure ``aide`` (planed)
+* Security Scans
+    * execute ``open-scap-scan``
+    * root kit analyse with ``rkhunter``
+    * configure ``aide`` (planed)
 
 
 ### Out of Scope
@@ -55,6 +57,8 @@ ssh-add ~/.ssh/ansible_id_ed25519
 
 ```bash
 export ANSIBLE_INVENTORY=$(pwd)/prod
+export HCLOUD_TOKEN=$(pass .../token)
+
 ansible-playbook master-configure-system.yml
 ```
 
@@ -94,10 +98,10 @@ ansible-galaxy install -r requirements.yml
 cd build
 
 packer build base_centos.json
-vagrant box add base-box file:///$(pwd)/.output-vagrant-base/package.box --force
+vagrant box add base-box file:///$(pwd)/.output-vagrant-base/vagrant/package.box --force
 
 packer build base_docker_box.json
-vagrant box add docker-box file:///$(pwd)/.output-vagrant-docker/package.box --force
+vagrant box add docker-box file:///$(pwd)/.output-vagrant-docker/vagrant/package.box --force
 ```
 
 ### Releasing
