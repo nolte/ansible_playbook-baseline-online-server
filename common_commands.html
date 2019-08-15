@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Search &mdash; Base Service Configuration  documentation</title>
+  <title>Common Commands Collection &mdash; Base Service Configuration  documentation</title>
   
 
   
@@ -25,7 +25,6 @@
         <script type="text/javascript" src="_static/underscore.js"></script>
         <script type="text/javascript" src="_static/doctools.js"></script>
         <script type="text/javascript" src="_static/language_data.js"></script>
-        <script type="text/javascript" src="_static/searchtools.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -36,7 +35,7 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/css/custome.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="#" />
+    <link rel="search" title="Search" href="search.html" />
  
 
 </head>
@@ -69,7 +68,7 @@
 
           
 <div role="search">
-  <form id="rtd-search-form" class="wy-form" action="#" method="get">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -136,12 +135,14 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Search</li>
+      <li>Common Commands Collection</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
+            <a href="_sources/common_commands.rst.txt" rel="nofollow"> View page source</a>
+          
         
       </li>
     
@@ -153,19 +154,31 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <noscript>
-  <div id="fallback" class="admonition warning">
-    <p class="last">
-      Please activate JavaScript to enable the search
-      functionality.
-    </p>
-  </div>
-  </noscript>
+  <div class="section" id="common-commands-collection">
+<h1>Common Commands Collection<a class="headerlink" href="#common-commands-collection" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="ansible-cmdb">
+<h2>Ansible CMDB<a class="headerlink" href="#ansible-cmdb" title="Permalink to this headline">¶</a></h2>
+<p>Be sure that you have prepared your local <span class="xref std std-ref">Ansible</span>.</p>
+<div class="literal-block-wrapper docutils container" id="example-cmd-cmdb-create">
+<div class="code-block-caption"><span class="caption-text">Create A System HTML Overview</span><a class="headerlink" href="#example-cmd-cmdb-create" title="Permalink to this code">¶</a></div>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mkdir out
+ansible -i inventories/prod/ -m setup --tree out/ all
+ansible-cmdb -i inventories/prod out &gt; output.html
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="open-scap-scan">
+<h2>Open Scap scan<a class="headerlink" href="#open-scap-scan" title="Permalink to this headline">¶</a></h2>
+<div class="literal-block-wrapper docutils container" id="example-cmd-env-destroy">
+<div class="code-block-caption"><span class="caption-text">destroy the Environment</span><a class="headerlink" href="#example-cmd-env-destroy" title="Permalink to this code">¶</a></div>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ansible-playbook -i inventories/prod maintenance/playbook-execute-security-open-scap-scan.yml
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 
-  
-  <div id="search-results">
-  
-  </div>
 
            </div>
            
@@ -204,19 +217,12 @@
   
     
   
-  <script type="text/javascript">
-    jQuery(function() { Search.loadIndex("searchindex.js"); });
-  </script>
-  
-  <script type="text/javascript" id="searchindexloader"></script>
-  
 <div class="github-fork-ribbon-wrapper right">
     <div class="github-fork-ribbon">
         <a href="https://github.com/nolte/ansible_playbook-baseline-online-server">Fork me at GitHub</a>
     </div>
 </div>
  
-
 
 
 </body>

@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                v0.0.7
+                v0.0.8
               </div>
             
           
@@ -184,7 +184,7 @@
 <a class="reference external image-reference" href="https://ansible_playbook-baseline-online-server.readthedocs.io/en/stable/?badge=stable"><img alt="Documentation Status" src="https://readthedocs.org/projects/ansible_playbook-baseline-online-server/badge/?version=latest" /></a>
 <a class="reference external image-reference" href="https://github.com/nolte/ansible_playbook-baseline-online-server"><img alt="Github Issue Tracking" src="https://img.shields.io/github/issues-raw/nolte/ansible_playbook-baseline-online-server.svg" /></a>
 <a class="reference external image-reference" href="https://github.com/nolte/ansible_playbook-baseline-online-server"><img alt="Github LatestRelease" src="https://img.shields.io/github/release/nolte/ansible_playbook-baseline-online-server.svg" /></a>
-<p>This Repository will be handle the base configuration of Public Services, like Minecraft Server or Personal S3 Storage, a try dont get any <a class="reference external" href="https://martinfowler.com/bliki/SnowflakeServer.html">Snowflake Server</a>.<span class="raw-html-m2r"><br></span>
+<p>This Repository will be handle the base configuration of Public Services, like <a class="reference external" href="https://github.com/nolte/minecraft-infrastructure">Minecraft Server</a> or <a class="reference external" href="https://github.com/nolte/personal-storage-infrastructure">Personal S3 Storage</a>, a try dont get any <a class="reference external" href="https://martinfowler.com/bliki/SnowflakeServer.html">Snowflake Server</a>.<span class="raw-html-m2r"><br></span>
 Mostly hosted at <a class="reference external" href="https://docs.hetzner.cloud">hetzner.cloud</a>, and created with <a class="reference external" href="https://www.terraform.io/docs/providers/hcloud/index.html">Terraform</a>.</p>
 <div class="section" id="features">
 <h2>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
@@ -197,10 +197,14 @@ Mostly hosted at <a class="reference external" href="https://docs.hetzner.cloud"
 <li>base <code class="docutils literal notranslate"><span class="pre">logrotate</span></code> configuration</li>
 <li>configure <code class="docutils literal notranslate"><span class="pre">MotD</span></code> (Message of the Day)</li>
 <li>install <code class="docutils literal notranslate"><span class="pre">python3</span></code></li>
-<li>configure system <code class="docutils literal notranslate"><span class="pre">timezone</span></code></li>
+<li>configure system <code class="docutils literal notranslate"><span class="pre">ntp</span></code> for time handling</li>
 <li>configure <code class="docutils literal notranslate"><span class="pre">docker</span></code> (optional)</li>
-<li>execute <code class="docutils literal notranslate"><span class="pre">open-scap-scan</span></code> (planed)</li>
+<li>Security Scans<ul>
+<li>execute <code class="docutils literal notranslate"><span class="pre">open-scap-scan</span></code></li>
+<li>root kit analyse with <code class="docutils literal notranslate"><span class="pre">rkhunter</span></code></li>
 <li>configure <code class="docutils literal notranslate"><span class="pre">aide</span></code> (planed)</li>
+</ul>
+</li>
 </ul>
 <div class="section" id="out-of-scope">
 <h3>Out of Scope<a class="headerlink" href="#out-of-scope" title="Permalink to this headline">¶</a></h3>
@@ -260,6 +264,8 @@ ssh-add ~/.ssh/ansible_id_ed25519
 </tbody>
 </table>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">ANSIBLE_INVENTORY</span><span class="o">=</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>/prod
+<span class="nb">export</span> <span class="nv">HCLOUD_TOKEN</span><span class="o">=</span><span class="k">$(</span>pass .../token<span class="k">)</span>
+
 ansible-playbook master-configure-system.yml
 </pre></div>
 </div>
@@ -295,10 +301,10 @@ ansible-galaxy install -r requirements.yml
 <span class="nb">cd</span> build
 
 packer build base_centos.json
-vagrant box add base-box file:///<span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>/.output-vagrant-base/package.box --force
+vagrant box add base-box file:///<span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>/.output-vagrant-base/vagrant/package.box --force
 
 packer build base_docker_box.json
-vagrant box add docker-box file:///<span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>/.output-vagrant-docker/package.box --force
+vagrant box add docker-box file:///<span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>/.output-vagrant-docker/vagrant/package.box --force
 </pre></div>
 </div>
 </div>

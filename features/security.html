@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Fail2Ban &mdash; Base Service Configuration  documentation</title>
+  <title>Security Checks &mdash; Base Service Configuration  documentation</title>
   
 
   
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="../_static/css/custome.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Harder SSHd" href="harder_sshd.html" />
-    <link rel="prev" title="Feature Details" href="index.html" />
+    <link rel="next" title="glossary" href="../glossary.html" />
+    <link rel="prev" title="Harder SSHd" href="harder_sshd.html" />
  
 
 </head>
@@ -91,13 +91,13 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../readme.html">Base Service Configuration</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Feature Details</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Fail2Ban</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#usefull-commands">Usefull Commands</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#additional-links">Additional Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fail2ban.html">Fail2Ban</a></li>
+<li class="toctree-l2"><a class="reference internal" href="harder_sshd.html">Harder SSHd</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Security Checks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#open-scap-scan">open-scap-scan</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#root-kit-analyse">Root Kit Analyse</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="harder_sshd.html">Harder SSHd</a></li>
-<li class="toctree-l2"><a class="reference internal" href="security.html">Security Checks</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../glossary.html">glossary</a></li>
@@ -148,13 +148,13 @@
         
           <li><a href="index.html">Feature Details</a> &raquo;</li>
         
-      <li>Fail2Ban</li>
+      <li>Security Checks</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/features/fail2ban.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/features/security.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -167,50 +167,30 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="fail2ban">
-<span id="feature-fail2ban"></span><h1>Fail2Ban<a class="headerlink" href="#fail2ban" title="Permalink to this headline">¶</a></h1>
-<div class="line-block">
-<div class="line"><a class="reference internal" href="../glossary.html#term-fail2ban"><span class="xref std std-term">fail2ban</span></a> is a good way to keep <a class="reference external" href="https://en.wikipedia.org/wiki/Brute-force_attack">Brute force attack</a>’s  away from our System.</div>
-<div class="line">The Base configuration will be done from the <a class="reference external" href="https://github.com/robertdebock/ansible-role-fail2ban">robertdebock.fail2ban</a> Ansible Role. For Client required configuration take a look at <a class="reference internal" href="harder_sshd.html#feature-harderssd-client-config"><span class="std std-ref">Client Side SSH Configration</span></a>.</div>
-</div>
-<div class="section" id="usefull-commands">
-<h2>Usefull Commands<a class="headerlink" href="#usefull-commands" title="Permalink to this headline">¶</a></h2>
-<p>Show Current Jails</p>
-<div class="literal-block-wrapper docutils container" id="example-fail2ban-list-jails">
-<div class="code-block-caption"><span class="caption-text">list all jails</span><a class="headerlink" href="#example-fail2ban-list-jails" title="Permalink to this code">¶</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo su
-fail2ban-client status <span class="p">|</span> sed -n <span class="s1">&#39;s/,//g;s/.*Jail list://p&#39;</span> <span class="p">|</span> xargs -n1 fail2ban-client status
+  <div class="section" id="security-checks">
+<h1>Security Checks<a class="headerlink" href="#security-checks" title="Permalink to this headline">¶</a></h1>
+<p>At the moment, execute the security checks is a Manual Step. The Future Plan is, to execute and report the scans by a Scheduler System.</p>
+<div class="section" id="open-scap-scan">
+<h2>open-scap-scan<a class="headerlink" href="#open-scap-scan" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference internal" href="../glossary.html#term-openscap"><span class="xref std std-term">OpenSCAP</span></a> Project make it easy to scan your Systems of existing Security vulnerable or configuration missmatch.</p>
+<div class="literal-block-wrapper docutils container" id="example-command-execute-open-scap-scan">
+<div class="code-block-caption"><span class="caption-text">execute checks</span><a class="headerlink" href="#example-command-execute-open-scap-scan" title="Permalink to this code">¶</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ansible-playbook playbook-execute-security-open-scap-scan.yml
 </pre></div>
 </div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Status <span class="k">for</span> the jail: nginx-req-limit
-<span class="p">|</span>- Filter
-<span class="p">|</span>  <span class="p">|</span>- Currently failed:     <span class="m">0</span>
-<span class="p">|</span>  <span class="p">|</span>- Total failed: <span class="m">0</span>
-<span class="p">|</span>  <span class="sb">`</span>- File list:    /var/log/nginx/error.log
-<span class="sb">`</span>- Actions
-   <span class="p">|</span>- Currently banned:     <span class="m">0</span>
-   <span class="p">|</span>- Total banned: <span class="m">0</span>
-   <span class="sb">`</span>- Banned IP list:
-Status <span class="k">for</span> the jail: sshd
-<span class="p">|</span>- Filter
-<span class="p">|</span>  <span class="p">|</span>- Currently failed:     <span class="m">16</span>
-<span class="p">|</span>  <span class="p">|</span>- Total failed: <span class="m">108</span>
-<span class="p">|</span>  <span class="sb">`</span>- Journal matches:      <span class="nv">_SYSTEMD_UNIT</span><span class="o">=</span>sshd.service + <span class="nv">_COMM</span><span class="o">=</span>sshd
-<span class="sb">`</span>- Actions
-   <span class="p">|</span>- Currently banned:     <span class="m">0</span>
-   <span class="p">|</span>- Total banned: <span class="m">3</span>
-   <span class="sb">`</span>- Banned IP list:
+<p>The Generated Report will be stored at <code class="docutils literal notranslate"><span class="pre">./generated_reports/oscap-reports/{{</span> <span class="pre">inventory_hostname</span> <span class="pre">}}-{{</span> <span class="pre">oscap_policy</span> <span class="pre">}}.html</span></code></p>
+</div>
+<div class="section" id="root-kit-analyse">
+<h2>Root Kit Analyse<a class="headerlink" href="#root-kit-analyse" title="Permalink to this headline">¶</a></h2>
+<p>For Root kit analyse we use the <a class="reference internal" href="../glossary.html#term-rkhunter"><span class="xref std std-term">rkhunter</span></a> Tool.</p>
+<div class="literal-block-wrapper docutils container" id="example-command-execute-rootkit-scan">
+<div class="code-block-caption"><span class="caption-text">execute root kit checks</span><a class="headerlink" href="#example-command-execute-rootkit-scan" title="Permalink to this code">¶</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ansible-playbook playbook-execute-security-rootkit-scan.yml
 </pre></div>
 </div>
 </div>
-<div class="section" id="additional-links">
-<h2>Additional Links<a class="headerlink" href="#additional-links" title="Permalink to this headline">¶</a></h2>
-<p>some untested Prometheus Exporters</p>
-<ul class="simple">
-<li><a class="reference external" href="https://github.com/jangrewe/prometheus-fail2ban-exporter">jangrewe/prometheus-fail2ban-exporter</a></li>
-<li><a class="reference external" href="https://github.com/Kylapaallikko/fail2ban_exporter">Kylapaallikko/fail2ban_exporter</a></li>
-</ul>
+<p>The Generated Report will be stored at <code class="docutils literal notranslate"><span class="pre">./generated_reports/rootkitscan/{{</span> <span class="pre">inventory_hostname</span> <span class="pre">}}.txt</span></code></p>
 </div>
 </div>
 
@@ -222,10 +202,10 @@ Status <span class="k">for</span> the jail: sshd
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="harder_sshd.html" class="btn btn-neutral float-right" title="Harder SSHd" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../glossary.html" class="btn btn-neutral float-right" title="glossary" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral float-left" title="Feature Details" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="harder_sshd.html" class="btn btn-neutral float-left" title="Harder SSHd" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
