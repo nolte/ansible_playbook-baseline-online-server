@@ -1,0 +1,4 @@
+---
+common_packages:
+  - "rkhunter"
+  - "vim"

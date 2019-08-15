@@ -18,6 +18,9 @@
         name: robertdebock.epel
 
     - include_role:
+        name: common_packages
+
+    - include_role:
         name: harder_system
 
     - include_role:

@@ -1,0 +1,43 @@
+---
+- hosts: all
+  become: true
+  vars:
+    report_dest: "{{ playbook_dir }}/generated_reports/rootkitscan/{{ inventory_hostname }}.txt"
+  tasks:
+
+    - name: install rkhunter scanner
+      package:
+        name: "{{ item }}"
+        state: present
+      with_items:
+        - rkhunter
+
+    - block:
+        - name: run rkhunter
+          command: rkhunter  \
+            -c  \
+            --rwo \
+            --display-logfile \
+            --skip-keypress \
+            --logfile /tmp/rootkit-report.txt \
+            --noappend-log
+          async: 600
+          poll: 0
+          changed_when: false
+          register: security_rootkit_scan_sleeper
+
+        - name: 'RootKit scan started - check on async task'
+          async_status:
+            jid: "{{ security_rootkit_scan_sleeper.ansible_job_id }}"
+          register: security_rootkit_scan_result
+          until: security_rootkit_scan_result.finished
+          retries: 40
+          delay: 15
+          ignore_errors: yes
+
+      always:
+        - name: download report
+          fetch:
+            src: /tmp/rootkit-report.txt
+            dest: "{{ report_dest }}"
+            flat: yes

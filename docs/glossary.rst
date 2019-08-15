@@ -68,6 +68,11 @@ glossary
   Virtualenv
     `Virtualenv <https://virtualenv.pypa.io/en/latest/>`_ create isolated Python environments.
 
+  rkhunter
+    `rkhunter <http://rkhunter.sourceforge.net/>`_ hunter for Rootkits.
+
+  chkrootkit
+    `chkrootkit <http://www.chkrootkit.org/>`_ locally checks for signs of a rootkit *(planned)*.
 
 .. _aide: https://de.wikipedia.org/wiki/Advanced_Intrusion_Detection_Environment
 .. _open-scap: https://www.open-scap.org/tools/openscap-base/#documentation

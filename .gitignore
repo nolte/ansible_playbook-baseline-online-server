@@ -8,3 +8,4 @@ output-vagrant
 *.tfstate
 *.tfstate.*
 *.pyc
+generated_reports
