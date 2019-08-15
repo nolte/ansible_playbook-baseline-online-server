@@ -13,7 +13,7 @@ Mostly hosted at [hetzner.cloud](https://docs.hetzner.cloud), and created with [
 * base ``logrotate`` configuration
 * configure ``MotD`` (Message of the Day)
 * install ``python3``
-* configure system ``timezone``
+* configure system ``ntp`` for time handling
 * configure ``docker`` (optional)
 * Security Scans
     * execute ``open-scap-scan``

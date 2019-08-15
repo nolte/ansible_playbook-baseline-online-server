@@ -6,9 +6,6 @@
   tasks:
 
     - include_role:
-        name: manala.timezone
-
-    - include_role:
         name: configure_motd
 
     - include_role:
@@ -16,6 +13,9 @@
 
     - include_role:
         name: robertdebock.epel
+
+    - include_role:
+        name: geerlingguy.ntp
 
     - include_role:
         name: common_packages
