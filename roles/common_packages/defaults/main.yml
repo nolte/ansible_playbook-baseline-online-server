@@ -3,3 +3,4 @@ common_packages:
   - "rkhunter"
   - "vim"
   - "jq"
+  - "yq"
