@@ -32,9 +32,9 @@ repos:
       - id: black
         args: [--safe]
         language_version: python3.8
-#  - repo: https://github.com/ansible/ansible-lint
-#    rev: v4.1.0
-#    hooks:
-#      - id: ansible-lint
-#        args: [-x, "306"]  # faild for geerlingguy.docker (Shells that use pipes should set the pipefail option)
-#        exclude: ".circleci/config.yml"
+  - repo: https://github.com/ansible/ansible-lint
+    rev: v4.2.0
+    hooks:
+      - id: ansible-lint
+        args: [-x, "306"]  # faild for geerlingguy.docker (Shells that use pipes should set the pipefail option)
+        exclude: ".circleci/config.yml"
