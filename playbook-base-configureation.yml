@@ -8,14 +8,18 @@
     - include_role:
         name: configure_motd
 
-    - include_role:
-        name: robertdebock.bootstrap
+    - name: Include role
+      include_role:
+        name: ericsysmin.system.epel
 
-    - include_role:
-        name: robertdebock.epel
+    - name: Include role
+      include_role:
+        name: ericsysmin.system.chrony
 
-    - include_role:
-        name: geerlingguy.ntp
+    #- name: Include role
+    #  include_role:
+    #    name: ericsysmin.system.ntp
+
 
     - include_role:
         name: common_packages
@@ -26,15 +30,15 @@
     - include_role:
         name: configure_fail2ban
 
-    - include_role:
-        name: python3
-
-    - include_role:
-        name: geerlingguy.pip
-
-    - include_role:
-        name: preparation_backup
-
+#    - include_role:
+#        name: python3
+#
+#    - include_role:
+#        name: geerlingguy.pip
+#
+#    - include_role:
+#        name: preparation_backup
+#
     - include_role:
         name: arillso.logrotate
       vars:
@@ -62,8 +66,9 @@
                   - '/var/log/messages'
                   - '/var/log/secure'
                   - '/var/log/spooler'
-                postrotate:
-                  - /bin/kill -HUP `cat /var/run/syslogd.pid 2> /dev/null` 2> /dev/null || true
+                #postrotate:
+                #  -  /usr/bin/killall -HUP syslogd
+                #  - /bin/kill -HUP `cat /var/run/syslogd.pid 2> /dev/null` 2> /dev/null || true
                 options:
                   - compress
                   - missingok
