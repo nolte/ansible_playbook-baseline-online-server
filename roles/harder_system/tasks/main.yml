@@ -10,6 +10,7 @@
     group: root
   notify:
     - "started auditd"
+  when: audit_rules_enabled
 
 - name: configure system-auth
   template:
@@ -17,19 +18,21 @@
     dest: /etc/pam.d/system-auth
     owner: root
     group: root
-
+  when: audit_rules_enabled
 
 - name: disable audit log logrotate
   lineinfile:
     path: /etc/audit/auditd.conf
     regexp: '^max_log_file_action = '
     line: max_log_file_action = IGNORE
+  when: audit_rules_enabled
 
 - name: disable audit log max log files
   lineinfile:
     path: /etc/audit/auditd.conf
     regexp: '^max_log_file = '
     line: max_log_file = 0
+  when: audit_rules_enabled
 
 - include_role:
     name: arillso.logrotate
@@ -50,3 +53,4 @@
               - rotate 30
               - minsize 100k
               - maxsize 200M
+  when: audit_rules_enabled

@@ -1,3 +1,4 @@
 ---
+audit_rules_enabled: true
 sshd_AllowUsers:
   - "{{ ansible_user }}"
