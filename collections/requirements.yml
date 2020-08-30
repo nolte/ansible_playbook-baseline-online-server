@@ -1,1 +1,2 @@
-- name: ericsysmin.system
+collections:
+  - name: ericsysmin.system
