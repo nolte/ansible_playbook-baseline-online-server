@@ -19,7 +19,7 @@
     - {regexp: "^Protocol", line: "Protocol 2"}
     - {regexp: "^StrictModes", line: "StrictModes yes"}
     - {regexp: "^AllowUsers", line: "AllowUsers {{ sshd_AllowUsers | unique | join(' ') }}"}
-    - {regexp: "^MaxAuthTries", line: "MaxAuthTries 2"}
+    - {regexp: "^MaxAuthTries", line: "MaxAuthTries {{ sshd_MaxAuthTries }}"}
   notify: restart sshd
   tags:
     - harder_sshd
