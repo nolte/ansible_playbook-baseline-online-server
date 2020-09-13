@@ -4,3 +4,5 @@
   tasks:
     - name: Collect only facts returned by facter
       setup:    
+    - set_fact:
+        one_fact: something
