@@ -1,0 +1,27 @@
+version: "3.7"
+
+services:
+  vscode:
+    build: .
+    volumes:
+      - ../:/go/src/github.com/nolte/ansible_playbook-baseline-online-server:cached
+      - ~/.ssh:/home/vscode/.ssh:ro
+      - ~/.ssh:/root/.ssh:ro
+      - /var/run/docker.sock:/var/run/docker.sock
+      ## reuse volumes for extensions
+      - ansible_playbook-baseline-online-server-vol:/home/vscode/.vscode-server/extensions
+      # And/or for VS Code Insiders
+      - ansible_playbook-baseline-online-server-vol-insiders:/home/vscode/.vscode-server-insiders/extensions
+    environment:
+      - TZ=Europe/Berlin # $(cat /etc/timezone)
+    cap_add:
+      - SYS_PTRACE
+    security_opt:
+      - seccomp:unconfined
+    entrypoint: zsh -c "while sleep 1000; do :; done"
+    network_mode: "host"
+    privileged: true
+
+volumes:
+  ansible_playbook-baseline-online-server-vol:
+  ansible_playbook-baseline-online-server-vol-insiders:

@@ -1,0 +1,17 @@
+---
+- hosts: dockerbased
+  become: true
+  vars:
+    docker_compose_version: "1.24.1"
+  tasks:
+
+    - include_role:
+        name: geerlingguy.docker
+      vars:
+        docker_install_compose: true
+        docker_users: "{{ system_supporters }}"
+
+#    - name: install ansible required docker python package
+#      pip:
+#        name:
+#          - docker
