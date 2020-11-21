@@ -7,4 +7,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: gofrolist/molecule-action@v2
+        with:
+          molecule_working_dir: ./ansible
 #/go/src/github.com/nolte/ansible_playbook-baseline-online-server/molecule/default

@@ -13,11 +13,6 @@
       include_role:
         name: ericsysmin.system.chrony
 
-    #- name: Include role
-    #  include_role:
-    #    name: ericsysmin.system.ntp
-
-
     - include_role:
         name: common_packages
 

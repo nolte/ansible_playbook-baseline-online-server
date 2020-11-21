@@ -4,7 +4,12 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
-  - package-ecosystem: "gomod"
+  - package_manager: "python"
     directory: "/"
     schedule:
-      interval: "daily"
+      interval: "live"
+    update_schedule: "live"
+  - package_manager: "terraform"
+    directory: "/"
+    schedule:
+      interval: "live"

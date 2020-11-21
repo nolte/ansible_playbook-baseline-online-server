@@ -13,4 +13,5 @@ dist
 env
 packer_cache
 output-virtualbox-iso
-packer/centos8/builds
+packer/base/builds
+output-centos8
