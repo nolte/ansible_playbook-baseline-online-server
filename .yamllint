@@ -10,3 +10,10 @@ rules:
     level: error
   line-length: disable
   truthy: disable
+  new-lines:
+    type: unix
+
+ignore: |
+    env
+    dist
+    packer

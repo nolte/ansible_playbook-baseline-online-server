@@ -1,0 +1,10 @@
+name: Ansible Lint  # feel free to pick your own name
+
+on: [push, pull_request]
+jobs:
+  molecule:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: gofrolist/molecule-action@v2
+#/go/src/github.com/nolte/ansible_playbook-baseline-online-server/molecule/default

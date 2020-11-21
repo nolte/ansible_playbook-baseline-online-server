@@ -8,6 +8,7 @@
     dest: /etc/audit/rules.d/audit.rules
     owner: root
     group: root
+    mode: 0644
   notify:
     - "started auditd"
   when: audit_rules_enabled
@@ -18,6 +19,7 @@
     dest: /etc/pam.d/system-auth
     owner: root
     group: root
+    mode: 0644
   when: audit_rules_enabled
 
 - name: disable audit log logrotate

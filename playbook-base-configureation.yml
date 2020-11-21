@@ -5,9 +5,6 @@
     sshd_AllowUsers: "{{ system_supporters }}"
   tasks:
 
-    - include_role:
-        name: configure_motd
-
     - name: Include role
       include_role:
         name: ericsysmin.system.epel

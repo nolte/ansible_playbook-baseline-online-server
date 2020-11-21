@@ -10,3 +10,7 @@ output-vagrant
 *.pyc
 generated_reports
 dist
+env
+packer_cache
+output-virtualbox-iso
+packer/centos8/builds

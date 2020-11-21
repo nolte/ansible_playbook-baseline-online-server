@@ -2,5 +2,6 @@
 - hosts: all
   become: true
   tasks:
-    - ping:
+    - name: "ping target"
+      ping:
   handlers: []
