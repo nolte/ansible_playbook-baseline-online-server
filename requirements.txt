@@ -1,6 +1,6 @@
 ansible==2.10.3
 molecule[vagrant]==3.1.5
 paramiko==2.7.1
-pre-commit==2.8.2
+pre-commit==2.11.0
 bump2version==1.0.1
 ansible-lint==4.3.7
