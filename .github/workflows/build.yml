@@ -10,7 +10,7 @@ jobs:
         with:
           python-version: '3.8.5'
           architecture: 'x64'
-      - uses: pre-commit/action@v2.0.0
+      - uses: pre-commit/action@v2.0.1
       - uses: gofrolist/molecule-action@v2
         with:
           molecule_working_dir: ./ansible
