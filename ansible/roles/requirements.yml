@@ -1,7 +1,12 @@
 ---
-- name: arillso.logrotate
-- name: geerlingguy.docker
-- name: geerlingguy.pip
-- name: paulfantom.restic
-- name: robertdebock.fail2ban
-- name: ypsman.sshd_config
+# https://docs.ansible.com/ansible/latest/user_guide/collections_using.html#installing-collections
+collections:
+  # https://github.com/ericsysmin/ansible-collection-system
+  - name: ericsysmin.system
+roles:
+  - name: arillso.logrotate
+  - name: geerlingguy.docker
+  - name: geerlingguy.pip
+  - name: paulfantom.restic
+  - name: robertdebock.fail2ban
+  - name: ypsman.sshd_config
