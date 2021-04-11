@@ -33,7 +33,7 @@ source "virtualbox-iso" "centos8" {
     ],
   ]
   virtualbox_version_file = ".vbox_version"
-  vm_name = "packer-centos-8-2-x86_64"
+  vm_name = "packer-centos-8-x86_64"
 }
 
 #source "vagrant" "centos8" {

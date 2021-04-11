@@ -2,10 +2,6 @@
 
 - include_role:
     name: ypsman.sshd_config
-  vars:
-    sshd_PermitRootLogin: 'no'
-    sshd_PasswordAuthentication: 'no'
-    sshd_ListenAddress: '0.0.0.0'
   tags:
     - harder_sshd
 

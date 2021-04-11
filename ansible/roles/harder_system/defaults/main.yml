@@ -3,3 +3,7 @@ audit_rules_enabled: true
 sshd_MaxAuthTries: 5
 sshd_AllowUsers:
   - "{{ ansible_user }}"
+
+sshd_PermitRootLogin: 'no'
+sshd_PasswordAuthentication: 'no'
+sshd_ListenAddress: '0.0.0.0'

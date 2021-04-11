@@ -7,6 +7,7 @@ Mostly hosted at [hetzner.cloud](https://docs.hetzner.cloud), and created with [
 
 ## Features
 
+* useable as Terraform Module.
 * harder ``sshd``
     * configure ``fail2ban``
 * install ``restic``
@@ -51,7 +52,7 @@ ssh-add ~/.ssh/ansible_id_ed25519
 | playbook                               | ansible_group | description                                                      |
 |----------------------------------------|---------------|------------------------------------------------------------------|
 | ``master-configure-system.yml``        |               | master playbook for combine the base and docker playbook.        |
-| ``playbook-base-configureation.yml``   | _all_         | Configure the base system.                                       |
+| ``playbook-base-configuration.yml``   | _all_         | Configure the base system.                                       |
 | ``playbook-docker-configureation.yml`` | _dockerbased_ | Prepare the System for docker Usage                              |
 
 
