@@ -3,7 +3,7 @@
 collections:
   # https://github.com/ericsysmin/ansible-collection-system
   - name: ericsysmin.system
-roles:  
+roles:
   - name: arillso.logrotate
   - name: geerlingguy.docker
   - name: geerlingguy.pip
