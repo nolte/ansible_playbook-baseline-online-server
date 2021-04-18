@@ -7,7 +7,8 @@ Mostly hosted at [hetzner.cloud](https://docs.hetzner.cloud), and created with [
 
 ## Features
 
-* useable as Terraform Module.
+* useable as Terraform Module
+* Supports CentOS 8 
 * harder ``sshd``
     * configure ``fail2ban``
 * install ``restic``
@@ -20,6 +21,7 @@ Mostly hosted at [hetzner.cloud](https://docs.hetzner.cloud), and created with [
     * execute ``open-scap-scan``
     * root kit analyse with ``rkhunter``
     * configure ``aide`` (planed)
+* Make the Playbook Idempotence, (Planed!!!) 
 
 
 ### Out of Scope
