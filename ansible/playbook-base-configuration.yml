@@ -8,10 +8,12 @@
     - name: Include role
       include_role:
         name: ericsysmin.system.epel
+      when: ansible_os_family == "RedHat"
 
     - name: Include role
       include_role:
         name: ericsysmin.system.chrony
+      when: ansible_os_family == "RedHat"
 
     - include_role:
         name: common_packages

@@ -13,7 +13,15 @@ platforms:
   - name: instance
     box: generic/centos8
 #  - name: instance-ubu
-#    box: ubuntu/bionic64
+#    # 20.10
+#    box: ubuntu/groovy64
+    groups:
+      - dockerbased
+  - name: instance-lts
+    # 20.04 lts
+    box: ubuntu/focal64
+    groups:
+      - dockerbased    
 #    instance_raw_config_args:
 #      - "vm.network 'forwarded_port', guest: 80, host: 8088"
 

@@ -1,8 +1,8 @@
 ---
 - hosts: dockerbased
   become: true
-  vars:
-    docker_compose_version: "1.24.1"
+#  vars:
+#    docker_compose_version: "1.24.1"
   tasks:
 
     - include_role:

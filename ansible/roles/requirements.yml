@@ -6,6 +6,7 @@ collections:
 roles:
   - name: arillso.logrotate
   - name: geerlingguy.docker
+    version: 3.1.1
   - name: geerlingguy.pip
   - name: paulfantom.restic
   - name: robertdebock.fail2ban

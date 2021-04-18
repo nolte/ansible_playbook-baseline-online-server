@@ -1,5 +1,5 @@
 ---
-audit_rules_enabled: true
+audit_rules_enabled: false
 sshd_MaxAuthTries: 5
 sshd_AllowUsers:
   - "{{ ansible_user }}"
