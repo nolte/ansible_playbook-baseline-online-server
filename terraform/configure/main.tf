@@ -8,6 +8,6 @@ module "ansible_local_dependencies" {
 module "ansible_provisioner" {
   source    = "github.com/cloudposse/tf_ansible"
   arguments = ["-i ${var.ansible_inventory_path}", "--extra-vars ${jsonencode(var.extraVars)}"]
-  playbook  = "${path.module}/../../ansible/playbook-base-configureation.yml"
+  playbook  = "${path.module}/../../ansible/master-configure-system.yml"
   dry_run   = false
 }
