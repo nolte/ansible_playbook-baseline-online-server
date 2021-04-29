@@ -1,0 +1,7 @@
+---
+- hosts: k8s
+  become: true
+  tasks:
+
+    - include_role:
+        name: nolte.firewalld-k8s

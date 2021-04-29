@@ -11,3 +11,8 @@ roles:
   - name: paulfantom.restic
   - name: robertdebock.fail2ban
   - name: ypsman.sshd_config
+  - src: https://gitlab.com/nolte-collection-v2/modules/ansible-roles/ansible_role-k8s-firewalld.git
+    # https://github.com/FlatKey/ansible-firewalld-role.git
+    version: master
+    scm: git
+    name: nolte.firewalld-k8s

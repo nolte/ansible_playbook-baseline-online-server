@@ -1,3 +1,4 @@
 ---
 - import_playbook: playbook-base-configuration.yml
 - import_playbook: playbook-docker-configuration.yml
+- import_playbook: playbook-k8s-firewalld.yml
