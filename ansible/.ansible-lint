@@ -1,0 +1,5 @@
+warn_list:  # or 'skip_list' to silence them completely
+  - risky-shell-pipe  # Shells that use pipes should set the pipefail option
+  - unnamed-task  # All tasks should be named
+  - experimental  # all rules tagged as experimental
+  - var-naming  # All variables should be named using only lowercase and underscores

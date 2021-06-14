@@ -55,9 +55,6 @@
                   - '/var/log/messages'
                   - '/var/log/secure'
                   - '/var/log/spooler'
-                #postrotate:
-                #  -  /usr/bin/killall -HUP syslogd
-                #  - /bin/kill -HUP `cat /var/run/syslogd.pid 2> /dev/null` 2> /dev/null || true
                 options:
                   - compress
                   - missingok
