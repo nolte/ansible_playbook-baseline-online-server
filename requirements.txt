@@ -1,4 +1,4 @@
-ansible==2.10.3
+ansible==4.3.0
 molecule[vagrant]==3.1.5
 paramiko==2.7.2
 pre-commit==2.8.2
