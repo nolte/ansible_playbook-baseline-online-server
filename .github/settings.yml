@@ -3,6 +3,22 @@ _extends: gh-plumbing:.github/commons-settings.yml
 
 repository:
   name: ansible_playbook-baseline-online-server
-  description: Ansible Role for install the
+  description: Bootstrapping server, install a set of common tools and configurations.
   homepage: https://nolte.github.io/ansible_playbook-baseline-online-server
   topics: ansible, ansible-playbook, bootstrapping
+
+branches:
+  - name: master
+    protection:
+      required_pull_request_reviews: null
+      required_status_checks: null
+      enforce_admins: true
+      restrictions: null
+  - name: develop
+    protection:
+      required_pull_request_reviews: null
+      required_status_checks:
+        strict: true
+        contexts:
+          - "Ansible Lint / molecule (push)"
+      restrictions: null
