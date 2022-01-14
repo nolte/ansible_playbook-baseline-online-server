@@ -4,14 +4,8 @@ dependency:
   options:
     role-file: ./roles/requirements.yml
 
-driver:
-  name: vagrant
-
 platforms:
-  - name: instance
-    box: fedora/35-cloud-base
-    memory: 512
-    cpus: 1
+  - name: molecule-instance-1
 
 provisioner:
   name: ansible
@@ -24,7 +18,9 @@ provisioner:
     name: ansible-lint
 
 scenario:
-  name: default
+  name: lintonly
+  test_sequence:
+    - lint
 
 lint: |
   set -e

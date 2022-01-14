@@ -9,8 +9,7 @@ extensions = [
     "sphinx.ext.viewcode",
     "sphinxcontrib.plantuml",
     "sphinx.ext.githubpages",
-    "sphinxcontrib.ansibleautodoc",
-    "m2r",
+    "m2r2",
 ]
 
 # Add any paths that contain templates here, relative to this directory.

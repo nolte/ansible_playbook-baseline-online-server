@@ -1,25 +1,15 @@
 ---
 
 - include_role:
-    name: ypsman.sshd_config
+    name: mafalb.openssh.sshd
   vars:
-    sshd_PermitRootLogin: 'no'
-    sshd_PasswordAuthentication: 'no'
-    sshd_ListenAddress: '0.0.0.0'
-  tags:
-    - harder_sshd
-
-- name: "set addition sshd config attributes"
-  lineinfile:
-    path: /etc/ssh/sshd_config
-    regexp: "{{ item.regexp }}"
-    line: "{{ item.line }}"
-    validate: 'sshd -t -f %s'
-  with_items:
-    - {regexp: "^Protocol", line: "Protocol 2"}
-    - {regexp: "^StrictModes", line: "StrictModes yes"}
-    - {regexp: "^AllowUsers", line: "AllowUsers {{ sshd_AllowUsers | unique | join(' ') }}"}
-    - {regexp: "^MaxAuthTries", line: "MaxAuthTries {{ sshd_MaxAuthTries }}"}
-  notify: restart sshd
+    sshd_config:
+      PermitRootLogin: 'no'
+      PasswordAuthentication: 'no'
+      ListenAddress: '0.0.0.0'
+      Protocol: 2
+      StrictModes: "yes"
+      AllowUsers: "{{ sshd_AllowUsers | unique | join(' ') }}"
+      MaxAuthTries: "{{ sshd_MaxAuthTries }}"
   tags:
     - harder_sshd

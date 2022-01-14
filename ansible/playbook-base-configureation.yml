@@ -13,22 +13,28 @@
       include_role:
         name: ericsysmin.system.chrony
 
-    - include_role:
+    - name: include the common packages role
+      include_role:
         name: common_packages
 
-    - include_role:
+    - name: include the hardering system role
+      include_role:
         name: harder_system
 
-    - include_role:
+    - name: include the fail2ban role
+      include_role:
         name: configure_fail2ban
 
-    - include_role:
+    - name: include the python pip role
+      include_role:
         name: geerlingguy.pip
 
-    - include_role:
+    - name: include the backup tooling role
+      include_role:
         name: preparation_backup
 
-    - include_role:
+    - name: include a log file rotate configuration role
+      include_role:
         name: arillso.logrotate
       vars:
         logrotate_applications:
@@ -55,9 +61,6 @@
                   - '/var/log/messages'
                   - '/var/log/secure'
                   - '/var/log/spooler'
-                #postrotate:
-                #  -  /usr/bin/killall -HUP syslogd
-                #  - /bin/kill -HUP `cat /var/run/syslogd.pid 2> /dev/null` 2> /dev/null || true
                 options:
                   - compress
                   - missingok
