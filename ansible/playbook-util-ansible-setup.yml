@@ -2,9 +2,9 @@
 - hosts: localhost
   tasks:
 
-    - name: install ansible Collections # noqa 301 305
+    - name: install ansible Collections  # noqa 301 305
       shell: ansible-galaxy collection install -r {{ playbook_dir }}/collections-requirements.yml --force
 
     # noqa
-    - name: install ansible roles # noqa 301 305
+    - name: install ansible roles  # noqa 301 305
       shell: ansible-galaxy install -r {{ playbook_dir }}/roles/requirements.yml --force

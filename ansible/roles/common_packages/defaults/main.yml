@@ -5,3 +5,5 @@ common_packages:
   - "jq"
   - "unzip"
   - "tar"
+  - "audit"
+  - "policycoreutils"

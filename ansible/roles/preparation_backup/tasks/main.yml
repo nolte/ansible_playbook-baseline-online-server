@@ -6,4 +6,4 @@
       - "botocore"
 
 - include_role:
-    name: paulfantom.restic
+    name: arillso.restic
