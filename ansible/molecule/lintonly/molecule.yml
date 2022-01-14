@@ -1,0 +1,29 @@
+---
+dependency:
+  name: galaxy
+  options:
+    role-file: ./roles/requirements.yml
+
+platforms:
+  - name: molecule-instance-1
+
+provisioner:
+  name: ansible
+  inventory:
+    links:
+      group_vars: ../inventory/group_vars/
+  playbooks:
+    converge: ../../master-configure-system.yml
+  lint:
+    name: ansible-lint
+
+scenario:
+  name: lintonly
+  test_sequence:
+    - lint
+
+lint: |
+  set -e
+  yamllint .
+  ansible-lint
+  flake8
