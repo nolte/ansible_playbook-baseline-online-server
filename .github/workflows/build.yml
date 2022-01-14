@@ -14,4 +14,6 @@ jobs:
       - uses: gofrolist/molecule-action@v2
         with:
           molecule_working_dir: ./ansible
+          molecule_command: lint
+
 #/go/src/github.com/nolte/ansible_playbook-baseline-online-server/molecule/default

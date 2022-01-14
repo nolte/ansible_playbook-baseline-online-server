@@ -1,0 +1,8 @@
+---
+_extends: gh-plumbing:.github/commons-settings.yml
+
+repository:
+  name: ansible_playbook-baseline-online-server
+  description: Ansible Role for install the
+  homepage: https://nolte.github.io/ansible_playbook-baseline-online-server
+  topics: ansible, ansible-playbook, bootstrapping
