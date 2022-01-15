@@ -1,39 +1,22 @@
-
-
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Base Service Configuration &mdash; Base Service Configuration  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/custome.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
-
-  
-  
-  
-  
-
-  
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-    
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-
-    
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/css/custome.css" type="text/css" />
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Feature Details" href="features/index.html" />
@@ -42,33 +25,16 @@
 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="index.html" class="icon icon-home"> Base Service Configuration
-          
-
-          
           </a>
-
-          
-            
-            
               <div class="version">
-                v0.0.8
+                v0.0.9.dev
               </div>
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -76,18 +42,8 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption"><span class="caption-text">Table of Contents</span></p>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Table of Contents</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Base Service Configuration</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#features">Features</a><ul>
@@ -107,6 +63,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#reusing-and-sharing">Reusing and Sharing</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#releasing">Releasing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setup-local-env">Setup Local Env</a></li>
 </ul>
 </li>
 </ul>
@@ -115,109 +72,73 @@
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">glossary</a></li>
 </ul>
 
-            
-          
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">Base Service Configuration</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="index.html">Docs</a> &raquo;</li>
-        
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
       <li>Base Service Configuration</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-            
             <a href="_sources/readme.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="base-service-configuration">
-<h1>Base Service Configuration<a class="headerlink" href="#base-service-configuration" title="Permalink to this headline">¶</a></h1>
+             
+  <section id="base-service-configuration">
+<h1>Base Service Configuration<a class="headerlink" href="#base-service-configuration" title="Permalink to this headline"></a></h1>
 <a class="reference external image-reference" href="https://github.com/nolte/ansible_playbook-baseline-online-server"><img alt="Github Project Stars" src="https://img.shields.io/github/stars/nolte/ansible_playbook-baseline-online-server.svg?label=Stars&amp;style=social" /></a>
 <a class="reference external image-reference" href="https://travis-ci.org/nolte/ansible_playbook-baseline-online-server"><img alt="Travis CI build status" src="https://travis-ci.org/nolte/ansible_playbook-baseline-online-server.svg?branch=master" /></a>
 <a class="reference external image-reference" href="https://ansible_playbook-baseline-online-server.readthedocs.io/en/stable/?badge=stable"><img alt="Documentation Status" src="https://readthedocs.org/projects/ansible_playbook-baseline-online-server/badge/?version=latest" /></a>
 <a class="reference external image-reference" href="https://github.com/nolte/ansible_playbook-baseline-online-server"><img alt="Github Issue Tracking" src="https://img.shields.io/github/issues-raw/nolte/ansible_playbook-baseline-online-server.svg" /></a>
 <a class="reference external image-reference" href="https://github.com/nolte/ansible_playbook-baseline-online-server"><img alt="Github LatestRelease" src="https://img.shields.io/github/release/nolte/ansible_playbook-baseline-online-server.svg" /></a>
-<p>This Repository will be handle the base configuration of Public Services, like <a class="reference external" href="https://github.com/nolte/minecraft-infrastructure">Minecraft Server</a> or <a class="reference external" href="https://github.com/nolte/personal-storage-infrastructure">Personal S3 Storage</a>, a try dont get any <a class="reference external" href="https://martinfowler.com/bliki/SnowflakeServer.html">Snowflake Server</a>.<span class="raw-html-m2r"><br></span>
+<p>This Repository will be handle the base configuration of Public Services, like <a class="reference external" href="https://github.com/nolte/minecraft-infrastructure">Minecraft Server</a> or <a class="reference external" href="https://github.com/nolte/personal-storage-infrastructure">Personal S3 Storage</a>, a try dont get any <a class="reference external" href="https://martinfowler.com/bliki/SnowflakeServer.html">Snowflake Server</a>.
 Mostly hosted at <a class="reference external" href="https://docs.hetzner.cloud">hetzner.cloud</a>, and created with <a class="reference external" href="https://www.terraform.io/docs/providers/hcloud/index.html">Terraform</a>.</p>
-<div class="section" id="features">
-<h2>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
+<section id="features">
+<h2>Features<a class="headerlink" href="#features" title="Permalink to this headline"></a></h2>
 <ul class="simple">
-<li>harder <code class="docutils literal notranslate"><span class="pre">sshd</span></code><ul>
-<li>configure <code class="docutils literal notranslate"><span class="pre">fail2ban</span></code></li>
+<li><p>harder <code class="docutils literal notranslate"><span class="pre">sshd</span></code></p>
+<ul>
+<li><p>configure <code class="docutils literal notranslate"><span class="pre">fail2ban</span></code></p></li>
 </ul>
 </li>
-<li>install <code class="docutils literal notranslate"><span class="pre">restic</span></code></li>
-<li>base <code class="docutils literal notranslate"><span class="pre">logrotate</span></code> configuration</li>
-<li>configure <code class="docutils literal notranslate"><span class="pre">MotD</span></code> (Message of the Day)</li>
-<li>install <code class="docutils literal notranslate"><span class="pre">python3</span></code></li>
-<li>configure system <code class="docutils literal notranslate"><span class="pre">ntp</span></code> for time handling</li>
-<li>configure <code class="docutils literal notranslate"><span class="pre">docker</span></code> (optional)</li>
-<li>Security Scans<ul>
-<li>execute <code class="docutils literal notranslate"><span class="pre">open-scap-scan</span></code></li>
-<li>root kit analyse with <code class="docutils literal notranslate"><span class="pre">rkhunter</span></code></li>
-<li>configure <code class="docutils literal notranslate"><span class="pre">aide</span></code> (planed)</li>
+<li><p>install <code class="docutils literal notranslate"><span class="pre">restic</span></code></p></li>
+<li><p>base <code class="docutils literal notranslate"><span class="pre">logrotate</span></code> configuration</p></li>
+<li><p>configure <code class="docutils literal notranslate"><span class="pre">MotD</span></code> (Message of the Day)</p></li>
+<li><p>install <code class="docutils literal notranslate"><span class="pre">python3</span></code></p></li>
+<li><p>configure system <code class="docutils literal notranslate"><span class="pre">ntp</span></code> for time handling</p></li>
+<li><p>configure <code class="docutils literal notranslate"><span class="pre">docker</span></code> (optional)</p></li>
+<li><p>Security Scans</p>
+<ul>
+<li><p>execute <code class="docutils literal notranslate"><span class="pre">open-scap-scan</span></code></p></li>
+<li><p>root kit analyse with <code class="docutils literal notranslate"><span class="pre">rkhunter</span></code></p></li>
+<li><p>configure <code class="docutils literal notranslate"><span class="pre">aide</span></code> (planed)</p></li>
 </ul>
 </li>
 </ul>
-<div class="section" id="out-of-scope">
-<h3>Out of Scope<a class="headerlink" href="#out-of-scope" title="Permalink to this headline">¶</a></h3>
+<section id="out-of-scope">
+<h3>Out of Scope<a class="headerlink" href="#out-of-scope" title="Permalink to this headline"></a></h3>
 <ul class="simple">
-<li>Provide any Infrastructure (see <a class="reference external" href="https://github.com/nolte/terraform-infrastructure-modules">nolte/terraform-infrastructure-modules</a>)</li>
-<li>Install any Services, like Minecraft (<a class="reference external" href="https://github.com/nolte/minecraft-infrastructure">nolte/minecraft-infrastructure</a>), or MinIO (<a class="reference external" href="https://github.com/nolte/personal-storage-infrastructure">nolte/personal-storage-infrastructure</a>).</li>
+<li><p>Provide any Infrastructure (see <a class="reference external" href="https://github.com/nolte/terraform-infrastructure-modules">nolte/terraform-infrastructure-modules</a>)</p></li>
+<li><p>Install any Services, like Minecraft (<a class="reference external" href="https://github.com/nolte/minecraft-infrastructure">nolte/minecraft-infrastructure</a>), or MinIO (<a class="reference external" href="https://github.com/nolte/personal-storage-infrastructure">nolte/personal-storage-infrastructure</a>).</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="prepare-python-env">
-<h3>Prepare Python Env<a class="headerlink" href="#prepare-python-env" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline"></a></h2>
+<section id="prepare-python-env">
+<h3>Prepare Python Env<a class="headerlink" href="#prepare-python-env" title="Permalink to this headline"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>virtualenv -p python3 ~/venvs/develop-ansible_role-vagrant
 <span class="nb">source</span> ~/venvs/develop-ansible_role-vagrant/bin/activate
 pip install -r requirements.txt
@@ -225,41 +146,41 @@ pre-commit install
 ansible-galaxy install -r requirements.yml
 </pre></div>
 </div>
-</div>
-<div class="section" id="start-ssh-agent">
-<h3>Start SSH Agent<a class="headerlink" href="#start-ssh-agent" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="start-ssh-agent">
+<h3>Start SSH Agent<a class="headerlink" href="#start-ssh-agent" title="Permalink to this headline"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pass private/keyfiles/ssh/ansible_rollout/passphrase -c
 <span class="nb">eval</span> <span class="s2">&quot;</span><span class="k">$(</span>ssh-agent -s<span class="k">)</span><span class="s2">&quot;</span>
 ssh-add ~/.ssh/ansible_id_ed25519
 </pre></div>
 </div>
-</div>
-<div class="section" id="playbooks">
-<h3>Playbooks<a class="headerlink" href="#playbooks" title="Permalink to this headline">¶</a></h3>
-<table border="1" class="docutils">
+</section>
+<section id="playbooks">
+<h3>Playbooks<a class="headerlink" href="#playbooks" title="Permalink to this headline"></a></h3>
+<table class="docutils align-default">
 <colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">playbook</th>
-<th class="head">ansible_group</th>
-<th class="head">description</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>playbook</p></th>
+<th class="head"><p>ansible_group</p></th>
+<th class="head"><p>description</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">master-configure-system.yml</span></code></td>
-<td>&#160;</td>
-<td>master playbook for combine the base and docker playbook.</td>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">master-configure-system.yml</span></code></p></td>
+<td></td>
+<td><p>master playbook for combine the base and docker playbook.</p></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">playbook-base-configureation.yml</span></code></td>
-<td><em>all</em></td>
-<td>Configure the base system.</td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">playbook-base-configureation.yml</span></code></p></td>
+<td><p><em>all</em></p></td>
+<td><p>Configure the base system.</p></td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">playbook-docker-configureation.yml</span></code></td>
-<td><em>dockerbased</em></td>
-<td>Prepare the System for docker Usage</td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">playbook-docker-configureation.yml</span></code></p></td>
+<td><p><em>dockerbased</em></p></td>
+<td><p>Prepare the System for docker Usage</p></td>
 </tr>
 </tbody>
 </table>
@@ -269,10 +190,10 @@ ssh-add ~/.ssh/ansible_id_ed25519
 ansible-playbook master-configure-system.yml
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="development">
-<h2>Development<a class="headerlink" href="#development" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="development">
+<h2>Development<a class="headerlink" href="#development" title="Permalink to this headline"></a></h2>
 <p>For Locally automatical testing we use a Combination of Molecule and Vagrant</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>virtualenv -p python3 ~/venvs/ansible-vagrant/
 <span class="nb">source</span> ~/venvs/ansible-vagrant/bin/activate
@@ -280,36 +201,26 @@ pip install -r requirements.txt
 pre-commit install
 </pre></div>
 </div>
-<div class="section" id="testing">
-<h3>Testing<a class="headerlink" href="#testing" title="Permalink to this headline">¶</a></h3>
+<section id="testing">
+<h3>Testing<a class="headerlink" href="#testing" title="Permalink to this headline"></a></h3>
 <p>running the tests:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>molecule <span class="nb">test</span>
 </pre></div>
 </div>
-<div class="section" id="infrastructure-tests">
-<h4>Infrastructure Tests<a class="headerlink" href="#infrastructure-tests" title="Permalink to this headline">¶</a></h4>
+<section id="infrastructure-tests">
+<h4>Infrastructure Tests<a class="headerlink" href="#infrastructure-tests" title="Permalink to this headline"></a></h4>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pytest --connection<span class="o">=</span>ansible --hosts<span class="o">=</span>all test/*
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="reusing-and-sharing">
-<h3>Reusing and Sharing<a class="headerlink" href="#reusing-and-sharing" title="Permalink to this headline">¶</a></h3>
-<p>For reusing and sharing you can create own vagrant box with the Packer File under <code class="docutils literal notranslate"><span class="pre">/build</span></code>.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span> ~/venvs/develop-ansible_role-vagrant/bin/activate
-ansible-galaxy install -r requirements.yml
-<span class="nb">cd</span> build
-
-packer build base_centos.json
-vagrant box add base-box file:///<span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>/.output-vagrant-base/vagrant/package.box --force
-
-packer build base_docker_box.json
-vagrant box add docker-box file:///<span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>/.output-vagrant-docker/vagrant/package.box --force
-</pre></div>
-</div>
-</div>
-<div class="section" id="releasing">
-<h3>Releasing<a class="headerlink" href="#releasing" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="reusing-and-sharing">
+<h3>Reusing and Sharing<a class="headerlink" href="#reusing-and-sharing" title="Permalink to this headline"></a></h3>
+<p>For reusing and sharing you can create own vagrant box with the <a class="reference external" href="packer.io">Packer</a> <code class="docutils literal notranslate"><span class="pre">/packer</span></code>.</p>
+<p>First Build the CentOS Base (WIP)</p>
+</section>
+<section id="releasing">
+<h3>Releasing<a class="headerlink" href="#releasing" title="Permalink to this headline"></a></h3>
 <p>Must be executed from the <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pre-commit uninstall <span class="se">\</span>
     <span class="o">&amp;&amp;</span> bump2version --tag release --commit <span class="se">\</span>
@@ -320,57 +231,53 @@ vagrant box add docker-box file:///<span class="k">$(</span><span class="nb">pwd
     <span class="o">&amp;&amp;</span> pre-commit install
 </pre></div>
 </div>
+</section>
+<section id="setup-local-env">
+<h3>Setup Local Env<a class="headerlink" href="#setup-local-env" title="Permalink to this headline"></a></h3>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>asdf plugin-add packer https://github.com/Banno/asdf-hashicorp.git
+asdf plugin-add terraform https://github.com/Banno/asdf-hashicorp.git
+asdf plugin-add python
+asdf plugin-test act https://github.com/grimoh/asdf-act --asdf-tool-version latest
+</pre></div>
 </div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">venv</span> <span class="n">env</span>
+<span class="n">source</span> <span class="n">env</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
 </div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="features/index.html" class="btn btn-neutral float-right" title="Feature Details" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="index.html" class="btn btn-neutral float-left" title="Base Service Configuration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Base Service Configuration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="features/index.html" class="btn btn-neutral float-right" title="Feature Details" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &copy; Copyright 
-
-    </p>
+    <p>&#169; Copyright .</p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
-
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
-
-  
-  
-    
-  
 <div class="github-fork-ribbon-wrapper right">
     <div class="github-fork-ribbon">
         <a href="https://github.com/nolte/ansible_playbook-baseline-online-server">Fork me at GitHub</a>
