@@ -1,0 +1,8 @@
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish_docs:
+    uses: nolte/gh-plumbing/.github/workflows/reuseable-sphinx.yaml@develop
+
