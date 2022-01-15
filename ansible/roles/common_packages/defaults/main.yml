@@ -1,0 +1,9 @@
+---
+common_packages:
+  - "rkhunter"
+  - "vim"
+  - "jq"
+  - "unzip"
+  - "tar"
+  - "audit"
+  - "policycoreutils"

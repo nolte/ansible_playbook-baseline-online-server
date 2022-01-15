@@ -1,7 +1,0 @@
----
-system_supporters:
-  - "{{ ansible_user }}"
-ntp_area: 'south-america'
-ntp_timezone: America/Chicago
-ntp_manage_config: true
-ntp_enabled: true

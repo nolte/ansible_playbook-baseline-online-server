@@ -1,0 +1,20 @@
+name: Ansible Lint  # feel free to pick your own name
+
+on: [push, pull_request]
+jobs:
+  molecule:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.8.5'
+          architecture: 'x64'
+
+      - uses: pre-commit/action@v2.0.3
+
+      - uses: gofrolist/molecule-action@v2
+        with:
+          molecule_working_dir: ./ansible
+          molecule_args: --scenario-name lintonly

@@ -1,0 +1,15 @@
+---
+
+- include_role:
+    name: mafalb.openssh.sshd
+  vars:
+    sshd_config:
+      PermitRootLogin: 'no'
+      PasswordAuthentication: 'no'
+      ListenAddress: '0.0.0.0'
+      Protocol: 2
+      StrictModes: "yes"
+      AllowUsers: "{{ sshd_AllowUsers | unique | join(' ') }}"
+      MaxAuthTries: "{{ sshd_MaxAuthTries }}"
+  tags:
+    - harder_sshd

@@ -2,7 +2,7 @@
 
 [![Github Project Stars](https://img.shields.io/github/stars/nolte/ansible_playbook-baseline-online-server.svg?label=Stars&style=social)](https://github.com/nolte/ansible_playbook-baseline-online-server) [![Travis CI build status](https://travis-ci.org/nolte/ansible_playbook-baseline-online-server.svg?branch=master)](https://travis-ci.org/nolte/ansible_playbook-baseline-online-server) [![Documentation Status](https://readthedocs.org/projects/ansible_playbook-baseline-online-server/badge/?version=latest)](https://ansible_playbook-baseline-online-server.readthedocs.io/en/stable/?badge=stable) [![Github Issue Tracking](https://img.shields.io/github/issues-raw/nolte/ansible_playbook-baseline-online-server.svg)](https://github.com/nolte/ansible_playbook-baseline-online-server) [![Github LatestRelease](https://img.shields.io/github/release/nolte/ansible_playbook-baseline-online-server.svg)](https://github.com/nolte/ansible_playbook-baseline-online-server)
 
-This Repository will be handle the base configuration of Public Services, like [Minecraft Server](https://github.com/nolte/minecraft-infrastructure) or [Personal S3 Storage](https://github.com/nolte/personal-storage-infrastructure), a try dont get any [Snowflake Server](https://martinfowler.com/bliki/SnowflakeServer.html).  
+This Repository will be handle the base configuration of Public Services, like [Minecraft Server](https://github.com/nolte/minecraft-infrastructure) or [Personal S3 Storage](https://github.com/nolte/personal-storage-infrastructure), a try dont get any [Snowflake Server](https://martinfowler.com/bliki/SnowflakeServer.html).
 Mostly hosted at [hetzner.cloud](https://docs.hetzner.cloud), and created with [Terraform](https://www.terraform.io/docs/providers/hcloud/index.html).
 
 ## Features
@@ -90,19 +90,9 @@ pytest --connection=ansible --hosts=all test/*
 
 ### Reusing and Sharing
 
-For reusing and sharing you can create own vagrant box with the Packer File under ``/build``.
+For reusing and sharing you can create own vagrant box with the [Packer](packer.io) ``/packer``.
 
-```bash
-source ~/venvs/develop-ansible_role-vagrant/bin/activate
-ansible-galaxy install -r requirements.yml
-cd build
-
-packer build base_centos.json
-vagrant box add base-box file:///$(pwd)/.output-vagrant-base/vagrant/package.box --force
-
-packer build base_docker_box.json
-vagrant box add docker-box file:///$(pwd)/.output-vagrant-docker/vagrant/package.box --force
-```
+First Build the CentOS Base (WIP)
 
 ### Releasing
 
@@ -116,4 +106,19 @@ pre-commit uninstall \
     && git push origin master --tags \
     && git push origin develop \
     && pre-commit install
+```
+
+### Setup Local Env
+
+```sh
+asdf plugin-add packer https://github.com/Banno/asdf-hashicorp.git
+asdf plugin-add terraform https://github.com/Banno/asdf-hashicorp.git
+asdf plugin-add python
+asdf plugin-test act https://github.com/grimoh/asdf-act --asdf-tool-version latest
+```
+
+```
+python -m venv env
+source env/bin/activate
+pip install -r requirements.txt
 ```

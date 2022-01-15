@@ -9,3 +9,9 @@ output-vagrant
 *.tfstate.*
 *.pyc
 generated_reports
+dist
+env
+packer_cache
+output-virtualbox-iso
+packer/base/builds
+output-centos8

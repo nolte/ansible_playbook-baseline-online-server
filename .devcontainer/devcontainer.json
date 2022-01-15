@@ -1,0 +1,83 @@
+{
+    "name": "ansible_playbook-baseline-online-server",
+    "dockerComposeFile": [
+        "docker-compose.yml"
+    ],
+    "service": "vscode",
+    "runServices": [
+        "vscode",
+    ],
+    "mounts": [
+        "source=ansible_playbook-baseline-online-server-vol,target=/home/vscode/.vscode-server/extensions,type=volume",
+        // And/or for VS Code Insiders
+        "source=ansible_playbook-baseline-online-server-vol-insiders,target=/home/vscode/.vscode-server-insiders/extensions,type=volume",
+    ],
+    "shutdownAction": "stopCompose",
+    "postCreateCommand": "chmod -R 700 .git",
+    "workspaceFolder": "/go/src/github.com/nolte/ansible_playbook-baseline-online-server",
+    // "overrideCommand": "",
+    "extensions": [
+        // General backend
+        "mohsen1.prettify-json",
+        "redhat.vscode-yaml", // Kubernetes and Kedge syntax support
+        // Go
+        //"ms-vscode.go",
+        // Console
+        "IBM.output-colorizer",
+        // Git
+        "eamodio.gitlens",
+        "mhutchie.git-graph",
+        // Other linters
+        "davidanson.vscode-markdownlint",
+        "ms-azuretools.vscode-docker",
+        // Other helpers
+        "shardulm94.trailing-spaces",
+        "Gruntfuggly.todo-tree",
+        "bierner.emojisense",
+        "stkb.rewrap", // rewrap comments after n characters on one line
+        "christian-kohler.path-intellisense",
+        // Other
+        "jrebocho.vscode-random", // generate random values
+        "alefragnani.Bookmarks",
+        "quicktype.quicktype", // Paste JSON as code
+        "spikespaz.vscode-smoothtype", // smooth cursor animation
+        "vscode-icons-team.vscode-icons",
+        // markdown
+        "docsmsft.docs-article-templates",
+        "docsmsft.docs-markdown",
+        "samuelcolvin.jinjahtml",
+        // terraform
+        "HashiCorp.terraform",
+        // python stuff
+        "ms-python.python",
+        "LittleFoxTeam.vscode-python-test-adapter",
+        "cschleiden.vscode-github-actions",
+        "ms-kubernetes-tools.kind-vscode",
+        "ms-kubernetes-tools.vscode-kubernetes-tools",
+        "EditorConfig.EditorConfig",
+    ],
+    "settings": {
+        // General settings
+        "files.eol": "\n",
+        // Docker
+        "remote.extensionKind": {
+            "ms-azuretools.vscode-docker": "workspace"
+        },
+        "[jsonc]": {
+            // disable because cookiecutter autoformat templates
+            "editor.formatOnSave": false
+        },
+        // python test stuff
+        "python.pythonPath": "/home/vscode/.virtualenvs/usage-ansible/bin/python",
+        "python.defaultInterpreterPath": "/home/vscode/.virtualenvs/usage-ansible/bin/python",
+        "python.testing.pytestArgs": [
+
+        ],
+        "python.testing.unittestEnabled": false,
+        "python.testing.nosetestsEnabled": false,
+        "python.testing.pytestEnabled": true,
+        "python.terminal.activateEnvInCurrentTerminal": true
+
+
+    }
+}
