@@ -1,5 +1,9 @@
 ---
 
+- name: Disable SELinux
+  ansible.posix.selinux:
+    state: "{{ selinux_state }}"
+
 - include: harder_sshd.yml
 
 - name: configure audit.rules
