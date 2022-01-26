@@ -1,6 +1,7 @@
 ---
 
-- include_role:
+- name: using external role for harder the sshd service
+  include_role:
     name: mafalb.openssh.sshd
   vars:
     sshd_config:
