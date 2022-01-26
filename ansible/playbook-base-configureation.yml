@@ -7,7 +7,7 @@
 
     - name: Include role
       include_role:
-        name: ericsysmin.system.epel
+        name: robertdebock.epel
 
     - name: Include role
       include_role:

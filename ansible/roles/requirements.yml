@@ -6,8 +6,10 @@ collections:
   - name: mafalb.openssh
 roles:
   - name: arillso.logrotate
+  - name: arillso.restic
   - name: geerlingguy.docker
   - name: geerlingguy.pip
-  - name: arillso.restic
-  - name: robertdebock.fail2ban
   - name: robertdebock.auditd
+  - name: robertdebock.epel
+  - name: robertdebock.fail2ban
+  - name: robertdebock.ntp

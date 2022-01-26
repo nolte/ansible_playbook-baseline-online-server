@@ -5,5 +5,6 @@
       - "boto3"
       - "botocore"
 
-- include_role:
+- name: Using External Role to install all required tools for doing backups
+  include_role:
     name: arillso.restic
