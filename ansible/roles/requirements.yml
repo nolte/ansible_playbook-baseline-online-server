@@ -2,15 +2,14 @@
 # https://docs.ansible.com/ansible/latest/user_guide/collections_using.html#installing-collections
 collections:
   # https://github.com/ericsysmin/ansible-collection-system
-  #- name: ericsysmin.system
+  - name: ericsysmin.system
   - name: mafalb.openssh
 roles:
   - name: arillso.logrotate
+  - name: arillso.restic
   - name: geerlingguy.docker
   - name: geerlingguy.pip
-  - name: arillso.restic
-  - name: robertdebock.fail2ban
   - name: robertdebock.auditd
-  #- name: geerlingguy.repo-epel
-  - name: robertdebock.ntp
   - name: robertdebock.epel
+  - name: robertdebock.fail2ban
+  - name: robertdebock.ntp
