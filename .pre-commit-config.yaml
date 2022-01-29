@@ -30,8 +30,7 @@ repos:
     rev: v5.3.2
     hooks:
       - id: ansible-lint
-        args: [-x, "306"]  # faild for geerlingguy.docker (Shells that use pipes should set the pipefail option)
-        exclude: ".circleci/config.yml"
+        args: ["-c=./ansible/.ansible-lint", "--project-dir=./ansible"]
   - repo: git://github.com/antonbabenko/pre-commit-terraform
     rev: v1.62.3
     hooks:
