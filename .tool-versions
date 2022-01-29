@@ -1,4 +1,4 @@
 packer 1.6.5
-terraform 0.13.5
+terraform 1.1.4
 python 3.8.5
 act 0.2.17
