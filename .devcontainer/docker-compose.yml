@@ -8,12 +8,12 @@ services:
       - ~/.ssh:/home/vscode/.ssh:ro
       - ~/.ssh:/root/.ssh:ro
       - /var/run/docker.sock:/var/run/docker.sock
-      ## reuse volumes for extensions
+      # reuse volumes for extensions
       - ansible_playbook-baseline-online-server-vol:/home/vscode/.vscode-server/extensions
       # And/or for VS Code Insiders
       - ansible_playbook-baseline-online-server-vol-insiders:/home/vscode/.vscode-server-insiders/extensions
     environment:
-      - TZ=Europe/Berlin # $(cat /etc/timezone)
+      - TZ=Europe/Berlin  # $(cat /etc/timezone)
     cap_add:
       - SYS_PTRACE
     security_opt:
