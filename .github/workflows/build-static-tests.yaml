@@ -7,7 +7,7 @@ jobs:
   security:
     uses: nolte/gh-plumbing/.github/workflows/reuseable-trivy.yaml@v1.0.5
   molecule:
-    uses: nolte/gh-plumbing/.github/workflows/reuseable-ansible-molecule.yaml@feature/workflow-ansible-molecule
+    uses: nolte/gh-plumbing/.github/workflows/reuseable-ansible-molecule.yaml@v1.0.6
     with:
       molecule_working_dir: ./ansible
       molecule_args: --scenario-name lintonly
