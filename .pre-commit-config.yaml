@@ -27,7 +27,7 @@ repos:
     hooks:
       - id: isort
   - repo: https://github.com/ansible/ansible-lint
-    rev: v5.3.2
+    rev: v5.4.0
     hooks:
       - id: ansible-lint
         args: ["-c=./ansible/.ansible-lint", "--project-dir=./ansible"]
