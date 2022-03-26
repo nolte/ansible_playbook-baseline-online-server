@@ -5,6 +5,7 @@ collections:
   - name: ericsysmin.system
   - name: mafalb.openssh
   - name: ansible.posix
+  - name: community.general
 roles:
   - name: arillso.logrotate
   - name: arillso.restic
