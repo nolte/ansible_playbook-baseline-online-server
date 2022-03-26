@@ -4,6 +4,7 @@ collections:
   # https://github.com/ericsysmin/ansible-collection-system
   - name: ericsysmin.system
   - name: mafalb.openssh
+  - name: ansible.posix
 roles:
   - name: arillso.logrotate
   - name: arillso.restic

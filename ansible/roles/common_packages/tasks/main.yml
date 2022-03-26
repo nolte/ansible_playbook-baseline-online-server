@@ -1,6 +1,16 @@
 ---
+- name: set package list
+  set_fact:
+    _common_packages: "{{ x86.common_packages }}"
+  when: ansible_architecture != "armhf"
+- debug: var=ansible_architecture
+- name: set armhf specific package list
+  set_fact:
+    _common_packages: "{{ armhf.common_packages }}"
+  #when: ansible_architecture == "armhf"
+
 - name: install common packages
   package:
     name: "{{ item }}"
     state: present
-  with_items: "{{ common_packages }}"
+  with_items: "{{ _common_packages }}"
