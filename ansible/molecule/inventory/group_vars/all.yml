@@ -6,3 +6,6 @@ ntp_area: 'south-america'
 ntp_timezone: America/Chicago
 ntp_manage_config: true
 ntp_enabled: true
+
+selinux_enabled: false
+audit_rules_enabled: false

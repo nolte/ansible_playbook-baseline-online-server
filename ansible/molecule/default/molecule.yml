@@ -8,14 +8,23 @@ driver:
   name: vagrant
 
 platforms:
-  - name: fedora
-    box: fedora/35-cloud-base
-    memory: 512
-    cpus: 1
+  #- name: fedora
+  #  box: fedora/35-cloud-base
+  #  memory: 512
+  #  cpus: 1
   - name: rockylinux
     box: bento/rockylinux-8.5
     memory: 512
     cpus: 1
+  - name: bullseye
+    box: debian/bullseye64
+    memory: 512
+    cpus: 1
+  - name: focal64
+    box: ubuntu/focal64
+    memory: 512
+    cpus: 1
+
 
 provisioner:
   name: ansible
