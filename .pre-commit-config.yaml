@@ -27,11 +27,11 @@ repos:
     hooks:
       - id: isort
   - repo: https://github.com/ansible/ansible-lint
-    rev: v5.4.0
+    rev: v6.0.2
     hooks:
       - id: ansible-lint
         args: ["-c=./ansible/.ansible-lint", "--project-dir=./ansible"]
-  - repo: git://github.com/antonbabenko/pre-commit-terraform
+  - repo: https://github.com/antonbabenko/pre-commit-terraform
     rev: v1.64.0
     hooks:
       - id: terraform_fmt

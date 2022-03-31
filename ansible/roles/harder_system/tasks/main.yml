@@ -3,6 +3,7 @@
 - name: Disable SELinux
   ansible.posix.selinux:
     state: "{{ selinux_state }}"
+  when: selinux_enabled
 
 - include: harder_sshd.yml
 
