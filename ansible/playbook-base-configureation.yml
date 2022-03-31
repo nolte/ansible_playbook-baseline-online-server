@@ -5,6 +5,11 @@
     sshd_AllowUsers: "{{ system_supporters }}"
   tasks:
 
+    - name: prepare "apt-get update" for start installation
+      apt:
+        update_cache: yes
+      when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+
     - name: Include role
       include_role:
         name: robertdebock.epel

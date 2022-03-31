@@ -19,7 +19,8 @@
         - scap-security-guide
 
     - block:
-        - name: run openscap
+
+        - name: run openscap # noqa no-changed-when
           command: oscap xccdf eval \
             --profile {{ oscap_profile }} \
             --results-arf /tmp/oscap-arf.xml \
@@ -32,4 +33,4 @@
           fetch:
             src: /tmp/oscap-report.html
             dest: "{{ oscap_policy_report_dest }}"
-            flat: yes
+            flat: true

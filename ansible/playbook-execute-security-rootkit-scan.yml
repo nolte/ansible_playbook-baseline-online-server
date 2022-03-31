@@ -33,11 +33,11 @@
           until: security_rootkit_scan_result.finished
           retries: 40
           delay: 15
-          ignore_errors: yes
+          ignore_errors: true
 
       always:
         - name: download report
           fetch:
             src: /tmp/rootkit-report.txt
             dest: "{{ report_dest }}"
-            flat: yes
+            flat: true

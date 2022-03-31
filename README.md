@@ -11,7 +11,6 @@ Mostly hosted at [hetzner.cloud](https://docs.hetzner.cloud), and created with [
     * configure ``fail2ban``
 * install ``restic``
 * base ``logrotate`` configuration
-* configure ``MotD`` (Message of the Day)
 * install ``python3``
 * configure system ``ntp`` for time handling
 * configure ``docker`` (optional)
@@ -19,6 +18,15 @@ Mostly hosted at [hetzner.cloud](https://docs.hetzner.cloud), and created with [
     * execute ``open-scap-scan``
     * root kit analyse with ``rkhunter``
     * configure ``aide`` (planed)
+
+## Supported Distributions
+
+| **Distribution**       | **Molecule tested** | **Packer Vagrant Boxed** | **Description** |
+|------------------------|---------------------|--------------------------|-----------------|
+| `Fedora`               |                     |                          |                 |
+| `RockyOS`              |                     |                          |                 |
+| `Ubuntu 20.04`         |                     |                          |                 |
+| `Alpine` (planed)      |                     |                          |                 |
 
 
 ### Out of Scope

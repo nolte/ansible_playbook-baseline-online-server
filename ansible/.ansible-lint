@@ -5,3 +5,10 @@ warn_list:  # or 'skip_list' to silence them completely
   - risky-shell-pipe  # Shells that use pipes should set the pipefail option
   - unnamed-task  # All tasks should be named
   - role-name
+  - var-naming
+  - no-changed-when
+  - fqcn-builtins
+  - yaml
+
+exclude_paths:
+  - ".github"
