@@ -7,3 +7,8 @@ warn_list:  # or 'skip_list' to silence them completely
   - role-name
   - var-naming
   - no-changed-when
+  - fqcn-builtins
+  - yaml
+
+exclude_paths:
+  - ".github"

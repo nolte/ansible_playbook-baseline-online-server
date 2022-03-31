@@ -3,7 +3,7 @@
   set_fact:
     _common_packages: "{{ x86.common_packages }}"
   when: ansible_architecture != "armhf"
-- debug: var=ansible_architecture
+
 - name: set armhf specific package list
   set_fact:
     _common_packages: "{{ armhf.common_packages }}"
