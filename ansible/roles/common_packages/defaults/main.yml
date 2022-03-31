@@ -1,9 +1,17 @@
 ---
-common_packages:
-  - "rkhunter"
-  - "vim"
-  - "jq"
-  - "unzip"
-  - "tar"
-  - "audit"
-  - "policycoreutils"
+armhf:
+  common_packages:
+    - "vim"
+    - "jq"
+    - "unzip"
+    - "tar"
+    - "policycoreutils"
+x86:
+  common_packages:
+    - "rkhunter"
+    - "vim"
+    - "jq"
+    - "unzip"
+    - "tar"
+    - "audit"
+    - "policycoreutils"

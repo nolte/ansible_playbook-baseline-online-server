@@ -5,3 +5,4 @@ sshd_AllowUsers:
   - "{{ ansible_user }}"
 
 selinux_state: enforcing
+selinux_enabled: true
