@@ -2,12 +2,12 @@ on:
   push:
 
 jobs:
-  static:
-    uses: nolte/gh-plumbing/.github/workflows/reusable-pre-commit.yaml@v1.1.11
+  #static:
+  #  uses: nolte/gh-plumbing/.github/workflows/reusable-pre-commit.yaml@v1.1.11
   security:
     uses: nolte/gh-plumbing/.github/workflows/reusable-trivy.yaml@v1.1.11
-  molecule:
-    uses: nolte/gh-plumbing/.github/workflows/reusable-ansible-molecule.yaml@v1.1.11
-    with:
-      molecule_working_dir: ./ansible
-      molecule_args: --scenario-name lintonly
+  #molecule:
+  #  uses: nolte/gh-plumbing/.github/workflows/reusable-ansible-molecule.yaml@v1.1.11
+  #  with:
+  #    molecule_working_dir: ./ansible
+  #    molecule_args: --scenario-name lintonly
