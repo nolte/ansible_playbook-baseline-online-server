@@ -5,7 +5,8 @@
     state: "{{ selinux_state }}"
   when: selinux_enabled
 
-- include: harder_sshd.yml
+- ansible.builtin.include_tasks:
+    file: harder_sshd.yml
 
 - name: Configure audit.rules
   template:
