@@ -1,15 +1,15 @@
 ---
-- name: install the yum-utils rpm from a remote repo
+- name: Install the yum-utils rpm from a remote repo
   yum:
     name: yum-utils
     state: present
 
-- name: install the python rpm from a remote repo
+- name: Install the python rpm from a remote repo
   yum:
     name: https://centos7.iuscommunity.org/ius-release.rpm
     state: present
 
-- name: install python3 required packages
+- name: Install python3 required packages
   package:
     name: "{{ item }}"
   with_items:
@@ -19,7 +19,7 @@
     - python36u-pip
     - python-pip
 
-- name: install virtualenv
+- name: Install virtualenv
   pip:
     name:
       - "virtualenv"

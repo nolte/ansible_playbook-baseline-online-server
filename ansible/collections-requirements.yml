@@ -3,3 +3,4 @@
 collections:
   # https://github.com/ericsysmin/ansible-collection-system
   - name: ericsysmin.system
+  - name: ansible.posix

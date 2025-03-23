@@ -9,6 +9,8 @@ warn_list:  # or 'skip_list' to silence them completely
   - no-changed-when
   - fqcn-builtins
   - yaml
+  - name[casing]
+  - name[play]
 
 exclude_paths:
   - ".github"
