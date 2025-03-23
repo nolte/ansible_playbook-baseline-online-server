@@ -7,7 +7,7 @@
 
 - include: harder_sshd.yml
 
-- name: configure audit.rules
+- name: Configure audit.rules
   template:
     src: audit.rules.j2
     dest: /etc/audit/rules.d/audit.rules
@@ -18,7 +18,7 @@
     - "started auditd"
   when: audit_rules_enabled
 
-- name: configure system-auth
+- name: Configure system-auth
   template:
     src: system-auth.j2
     dest: /etc/pam.d/system-auth
@@ -27,14 +27,14 @@
     mode: 0644
   when: audit_rules_enabled
 
-- name: disable audit log logrotate
+- name: Disable audit log logrotate
   lineinfile:
     path: /etc/audit/auditd.conf
     regexp: '^max_log_file_action = '
     line: max_log_file_action = IGNORE
   when: audit_rules_enabled
 
-- name: disable audit log max log files
+- name: Disable auDit log max log files
   lineinfile:
     path: /etc/audit/auditd.conf
     regexp: '^max_log_file = '
