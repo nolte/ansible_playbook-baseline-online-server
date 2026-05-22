@@ -4,6 +4,6 @@ on:
 
 jobs:
   refresh_presentation_branch:
-    uses: nolte/gh-plumbing/.github/workflows/reusable-release-cd-refresh-master.yml@v1.1.11
+    uses: nolte/gh-plumbing/.github/workflows/reusable-release-cd-refresh-master.yml@v1.1.19
     secrets:
       token: ${{ secrets.GITHUB_TOKEN }}

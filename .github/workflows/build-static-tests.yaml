@@ -5,7 +5,7 @@ jobs:
   #static:
   #  uses: nolte/gh-plumbing/.github/workflows/reusable-pre-commit.yaml@v1.1.11
   security:
-    uses: nolte/gh-plumbing/.github/workflows/reusable-trivy.yaml@v1.1.11
+    uses: nolte/gh-plumbing/.github/workflows/reusable-trivy.yaml@v1.1.19
   #molecule:
   #  uses: nolte/gh-plumbing/.github/workflows/reusable-ansible-molecule.yaml@v1.1.11
   #  with:
